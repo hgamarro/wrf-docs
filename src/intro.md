@@ -11,6 +11,10 @@ We have adapted the original textbook as a resource for high school educators, a
 
 The goal of this adaptation is to provide a tailored learning experience while acknowledging the significant contribution of the original authors. The original history and motivation section follows.
 
+
+
+**All content derived from the original and added in this adapted version is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license](https://creativecommons.org/licenses/by-sa/4.0/).** 
+
 ---
 
 ## History
