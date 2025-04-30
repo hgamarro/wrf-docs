@@ -4,16 +4,15 @@ parts:
 - caption: About this Book
   chapters:
   - file: LICENSE
-  - file: projects
 
 - caption: The Interactive Computing Environment
   chapters:
   - file: lectures/environment/intro_to_jupyterlab
   - file: lectures/environment/intro_to_unix
-  - file: lectures/environment/intro_to_git
-  - file:  assignments/files_markdown_git
+  # - file: lectures/environment/intro_to_git
+  # - file:  assignments/files_markdown_git
   - file: lectures/environment/python_environments
-  - file: lectures/environment/binder
+  # - file: lectures/environment/binder
   - file: lectures/data
 
 - caption: The Core Python Language
