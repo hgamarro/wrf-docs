@@ -1,5 +1,18 @@
 # An Introduction to Earth and Environmental Data Science
 
+**About This Adapted Resource**
+
+The foundation of this educational resource is the excellent open-source textbook *An Introduction to Earth and Environmental Data Science*, created by Ryan Abernathey, Kerry Key, Tim Crone, Julius Busecke, and the broader community that contributed to it. Their original work provides a valuable starting point for learning Python in the Earth Sciences, and we encourage you to visit the original project at: https://earth-env-data-science.github.io/
+
+We have adapted the original textbook as a resource for high school educators, aiming to introduce the fundamentals of weather data science and provide practical guidance on running the Weather Research and Forecasting (WRF) model. Our modifications primarily include:
+
+* **Removed Lessons:** Certain sections from the original text that were less relevant to our focus have been omitted.
+* **Added Lessons:** New content and examples have been added ex. working with WRF model output, specific Python libraries for atmospheric science.
+
+The goal of this adaptation is to provide a tailored learning experience while acknowledging the significant contribution of the original authors. The original history and motivation section follows.
+
+---
+
 ## History
 
 This book grew out of a course developed at Columbia University called _Research Computing in Earth Science_.
