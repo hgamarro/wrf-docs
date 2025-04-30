@@ -1,0 +1,55 @@
+name: deploy-book
+
+# Trigger the workflow on push to main/master branch, PRs to main/master, and manually
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+# Grant the GITHUB_TOKEN write permissions for contents (needed for gh-pages deploy)
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy-book:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ['3.8'] # Keep quotes for consistency if adding more versions later
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4 # Updated action version
+
+    # Install dependencies
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5 # Updated action version
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip' # Add caching for faster builds
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build src # Assumes source is in 'src' directory
+
+    # Deploy the book's html
+    # Only run this step on pushes to main or master branch
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      uses: peaceiris/actions-gh-pages@v4 # Updated action version
+      with:
+        # Use the automatic GITHUB_TOKEN, requires contents: write permission above
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages # Branch to deploy to
+        publish_dir: src/_build/html # Directory containing the built book
