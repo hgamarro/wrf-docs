@@ -1,5 +1,5 @@
 title: Weather Data Science 
-author: Adopted by: Harold Gamarro
+author: Adopted by Harold Gamarro
 copyright: Ryan Abernathey 2016-2021
 logo: eeds-logo.png
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
