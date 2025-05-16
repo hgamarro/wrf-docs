@@ -11,9 +11,9 @@ parts:
   - file: lectures/environment/intro_to_unix
   # - file: lectures/environment/intro_to_git
   # - file:  assignments/files_markdown_git
-  - file: lectures/environment/python_environments
+  # - file: lectures/environment/python_environments
   # - file: lectures/environment/binder
-  - file: lectures/data
+  - file: lectures/environment/data
 
 - caption: The Core Python Language
   chapters:
