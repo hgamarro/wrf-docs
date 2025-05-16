@@ -17,7 +17,7 @@ here, we point you to their docs. The following pages are particularly relevant:
 - [Managing Kernels and Terminals](https://jupyterlab.readthedocs.io/en/stable/user/running.html)
 
 You will gain experience and familiarity with JupyterLab over the course of the
-semester as we use it in our weekly lectures and assignments.
+summer.
 
 ## Markdown
 
@@ -28,10 +28,11 @@ Here are some useful references on Markdown syntax.
 - [Markdown Guide / Basic Syntax](https://www.markdownguide.org/basic-syntax) -
   A more user-friendly syntax guide.
 
-## Our Course JupyterHub
+<!-- ## Our Course JupyterHub
 
 [JupyterHub](https://jupyter.org/hub) is multi-user Jupyter environment designed for companies, classrooms and research labs.
 The Columbia version of this course uses a cloud-based JupyterHub environment
 managed by [2i2c](https://2i2c.org/infrastructure/):
 
 [![Launch JupyterHub](https://img.shields.io/badge/jupyterhub-us--central1--b.gcp.pangeo.io-orange?style=for-the-badge&logo=jupyter)]([https://pangeo.2i2c.cloud/](https://us-central1-b.gcp.pangeo.io/))
+ -->
