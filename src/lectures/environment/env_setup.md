@@ -39,6 +39,19 @@ This extension adds a **Table of Contents** panel for any folder of notebooks. O
 ![OOD Interactive Apps](./img/b5.png)
 ![OOD Interactive Apps](./img/b6.png)
 
+> **Note:**  
+> - If the lesson you open is a **Markdown file** (`.md`), you’ll probably need to use the **Terminal** for the lesson 
+> - If the lesson is a **Notebook** (`.ipynb`), you can open and interact with it directly in JupyterLab.  
+
+![OOD Interactive Apps](./img/b7.png)
+![OOD Interactive Apps](./img/b8.png)
+
+
+
+
+
+
+
 
 
 <!-- 3. **Install required Python packages**  
