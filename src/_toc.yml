@@ -47,7 +47,7 @@ parts:
 
 - caption: Geoscience Package
   chapters:
-  - file: lectures/mapping_cartopy
+  - file: lectures/basic_scipy/mapping_cartopy
   - file: assignments/cartopy
 
 - caption: Climate Model Data
