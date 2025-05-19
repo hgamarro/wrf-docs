@@ -266,23 +266,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/xarray/xarray-part2.html">
+    <a class="reference internal" href="../lectures/xarray/part2_xarray.html">
      Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/xarray/xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
     </a>
    </li>
   </ul>
@@ -723,7 +708,8 @@ title="Print to PDF"
 <p>Here we will make a map plot of earthquakes from a USGS catalog of historic large earthquakes. Color the earthquakes by log10(depth) and adjust the marker size to be magntiude<span class="math notranslate nohighlight">\(^4\)</span>/100</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
     <span class="s2">&quot;https://rabernat.github.io/research_computing/signif.txt.tsv.zip&quot;</span><span class="p">,</span>
     <span class="n">known_hash</span><span class="o">=</span><span class="s1">&#39;22b9f7045bf90fb99e14b95b24c81da3c52a0b4c79acf95d72fbe3a257001dbb&#39;</span><span class="p">,</span>
     <span class="n">processor</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">Unzip</span><span class="p">()</span>
@@ -734,6 +720,13 @@ title="Print to PDF"
 <span class="n">magnitude</span> <span class="o">=</span> <span class="n">earthquakes</span><span class="p">[:,</span> <span class="mi">9</span><span class="p">]</span>
 <span class="n">latitude</span> <span class="o">=</span> <span class="n">earthquakes</span><span class="p">[:,</span> <span class="mi">20</span><span class="p">]</span>
 <span class="n">longitude</span> <span class="o">=</span> <span class="n">earthquakes</span><span class="p">[:,</span> <span class="mi">21</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span>
 </pre></div>
 </div>
 </div>
@@ -751,16 +744,16 @@ title="Print to PDF"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "learning"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "learning",
             path: "./assignments"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'learning'</script>
 
               </div>
               

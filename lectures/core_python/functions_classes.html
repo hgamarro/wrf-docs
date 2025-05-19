@@ -264,23 +264,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray-part2.html">
+    <a class="reference internal" href="../xarray/part2_xarray.html">
      Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
     </a>
    </li>
   </ul>
@@ -708,7 +693,7 @@ say_hello<span class="o">?</span>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> say_hello<span class=" -Color -Color-Blue">()</span>
 <span class=" -Color -Color-Red">Docstring:</span> Return the word hello.
-<span class=" -Color -Color-Red">File:</span>      ~/Teaching/rces_book/content/lectures/core_python/&lt;ipython-input-1-5cff6abf0dfe&gt;
+<span class=" -Color -Color-Red">File:</span>      /tmp/ipykernel_58795/1650374671.py
 <span class=" -Color -Color-Red">Type:</span>      function
 </pre></div>
 </div>
@@ -773,15 +758,15 @@ say_hello<span class="o">?</span>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-8-56dd0f5596c8&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">say_hello_to</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="nn">&lt;ipython-input-6-a444b0f12be2&gt;</span> in <span class="ni">say_hello_to</span><span class="nt">(name)</span>
+<span class="nn">Cell In[6], line 4,</span> in <span class="ni">say_hello_to</span><span class="nt">(name)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">def</span><span class="w"> </span><span class="nf">say_hello_to</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return a greeting to `name`&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="k">return</span> <span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="n">name</span>
 
-<span class="ne">TypeError</span>: must be str, not int
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
 </div>
 </div>
@@ -999,7 +984,7 @@ Ryan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Hurricane at 0x108680940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Hurricane at 0x1474d1db9250&gt;
 </pre></div>
 </div>
 </div>
@@ -1042,7 +1027,7 @@ Ryan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Hurricane at 0x1086966a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Hurricane at 0x1474d1db8b90&gt;
 </pre></div>
 </div>
 </div>
@@ -1068,15 +1053,14 @@ Ryan
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-28-88629bebad1a&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">h</span> <span class="o">=</span> <span class="n">Hurricane</span><span class="p">(</span><span class="s1">&#39;ryan&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
 
-<span class="nn">&lt;ipython-input-25-24766bacf597&gt;</span> in <span class="ni">__init__</span><span class="nt">(self, name, category, lon)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">if</span> <span class="n">lon</span> <span class="o">&gt;</span> <span class="mi">180</span> <span class="ow">or</span> <span class="n">lon</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">180</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">8</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Invalid lon </span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lon</span> <span class="o">=</span> <span class="n">lon</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="nn">Cell In[25], line 8,</span> in <span class="ni">Hurricane.__init__</span><span class="nt">(self, name, category, lon)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">if</span> <span class="n">lon</span> <span class="o">&gt;</span> <span class="mi">180</span> <span class="ow">or</span> <span class="n">lon</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">180</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Invalid lon </span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="bp">self</span><span class="o">.</span><span class="n">lon</span> <span class="o">=</span> <span class="n">lon</span>
 
 <span class="ne">ValueError</span>: Invalid lon 300
 </pre></div>

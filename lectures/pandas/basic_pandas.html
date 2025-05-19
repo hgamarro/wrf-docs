@@ -264,23 +264,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray-part2.html">
+    <a class="reference internal" href="../xarray/part2_xarray.html">
      Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
     </a>
    </li>
   </ul>
@@ -715,7 +700,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># %matplotlib inline</span>
 </pre></div>
 </div>
 </div>
@@ -751,7 +736,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
 <img alt="../../_images/basic_pandas_5_1.png" src="../../_images/basic_pandas_5_1.png" />
@@ -797,7 +782,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.97e+24
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.97e+24)
 </pre></div>
 </div>
 </div>
@@ -810,7 +795,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.97e+24
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.97e+24)
 </pre></div>
 </div>
 </div>
@@ -1172,7 +1157,7 @@ Name: Earth, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.97e+24
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.97e+24)
 </pre></div>
 </div>
 </div>
@@ -1680,7 +1665,7 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;mass&#39;, ylabel=&#39;diameter&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;mass&#39;, ylabel=&#39;diameter&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/basic_pandas_56_1.png" src="../../_images/basic_pandas_56_1.png" />
@@ -1693,7 +1678,7 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
 <img alt="../../_images/basic_pandas_57_1.png" src="../../_images/basic_pandas_57_1.png" />
@@ -1713,7 +1698,7 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
 <img alt="../../_images/basic_pandas_59_1.png" src="../../_images/basic_pandas_59_1.png" />
@@ -1727,7 +1712,7 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
 <img alt="../../_images/basic_pandas_61_1.png" src="../../_images/basic_pandas_61_1.png" />
@@ -1741,10 +1726,10 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
-            ...
-            12, 12, 12, 12, 12, 12, 12, 12, 12,  1],
-           dtype=&#39;int64&#39;, length=731)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
+       ...
+       12, 12, 12, 12, 12, 12, 12, 12, 12,  1],
+      dtype=&#39;int32&#39;, length=731)
 </pre></div>
 </div>
 </div>
@@ -1756,10 +1741,10 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
-            ...
-            23, 24, 25, 26, 27, 28, 29, 30, 31,  1],
-           dtype=&#39;int64&#39;, length=731)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
+       ...
+       23, 24, 25, 26, 27, 28, 29, 30, 31,  1],
+      dtype=&#39;int32&#39;, length=731)
 </pre></div>
 </div>
 </div>
@@ -1785,14 +1770,15 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/noaa-data/data.txt&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/global/home/users/hgamarro/.cache/noaa-data/data.txt&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span><span class="s1">&#39;/home/jovyan/.cache/noaa-data/data.txt&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace username i.e hgamarro with your own username </span>
+<span class="o">!</span><span class="w"> </span>head<span class="w"> </span><span class="s1">&#39;/global/home/users/hgamarro/.cache/noaa-data/data.txt&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1877,6 +1863,12 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_60589/3110905342.py:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  df = pd.read_csv(datafile, sep=&#39;\s+&#39;)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2054,6 +2046,12 @@ Name: temperature, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_60589/4090761360.py:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  df = pd.read_csv(datafile, sep=&#39;\s+&#39;, na_values=[-9999.0, -99.0])
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2315,6 +2313,12 @@ Data columns (total 28 columns):
  27  SOIL_TEMP_100_DAILY      364 non-null    float64       
 dtypes: datetime64[ns](1), float64(25), int64(1), object(1)
 memory usage: 80.0+ KB
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_60589/293020238.py:1: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  df = pd.read_csv(datafile, sep=&#39;\s+&#39;,
 </pre></div>
 </div>
 </div>
@@ -3437,7 +3441,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>count</th>
       <td>365.0</td>
       <td>365.000000</td>
-      <td>3.650000e+02</td>
+      <td>365.00</td>
       <td>3.650000e+02</td>
       <td>364.000000</td>
       <td>364.000000</td>
@@ -3461,7 +3465,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>mean</th>
       <td>64756.0</td>
       <td>2.470767</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>15.720055</td>
       <td>4.037912</td>
@@ -3485,8 +3489,8 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>std</th>
       <td>0.0</td>
       <td>0.085997</td>
-      <td>5.265234e-13</td>
-      <td>3.842198e-13</td>
+      <td>0.00</td>
+      <td>7.115181e-15</td>
       <td>10.502087</td>
       <td>9.460676</td>
       <td>9.727451</td>
@@ -3509,7 +3513,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>min</th>
       <td>64756.0</td>
       <td>2.422000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>-12.300000</td>
       <td>-21.800000</td>
@@ -3533,7 +3537,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>25%</th>
       <td>64756.0</td>
       <td>2.422000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>6.900000</td>
       <td>-2.775000</td>
@@ -3557,7 +3561,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>50%</th>
       <td>64756.0</td>
       <td>2.422000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>17.450000</td>
       <td>4.350000</td>
@@ -3581,7 +3585,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>75%</th>
       <td>64756.0</td>
       <td>2.422000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>24.850000</td>
       <td>11.900000</td>
@@ -3605,7 +3609,7 @@ Name: 2017-08-07 00:00:00, dtype: object
       <th>max</th>
       <td>64756.0</td>
       <td>2.622000</td>
-      <td>-7.374000e+01</td>
+      <td>-73.74</td>
       <td>4.179000e+01</td>
       <td>33.400000</td>
       <td>20.700000</td>
@@ -3660,7 +3664,7 @@ Name: 2017-08-07 00:00:00, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;LST_DATE&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/basic_pandas_89_1.png" src="../../_images/basic_pandas_89_1.png" />
@@ -3689,7 +3693,7 @@ Name: 2017-08-07 00:00:00, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;LST_DATE&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/basic_pandas_92_1.png" src="../../_images/basic_pandas_92_1.png" />
@@ -3702,396 +3706,26 @@ Name: 2017-08-07 00:00:00, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># monthly reampler object</span>
-<span class="n">rs_obj</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span>
-<span class="n">rs_obj</span>
+<span class="n">num_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;number&#39;</span><span class="p">)</span>
+<span class="n">rs_obj</span> <span class="o">=</span> <span class="n">num_df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span>
+<span class="n">monthly_mean</span> <span class="o">=</span> <span class="n">rs_obj</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.resample.DatetimeIndexResampler object at 0x7f1f14a1d5e0&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs_obj</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>WBANNO</th>
-      <th>CRX_VN</th>
-      <th>LONGITUDE</th>
-      <th>LATITUDE</th>
-      <th>T_DAILY_MAX</th>
-      <th>T_DAILY_MIN</th>
-      <th>T_DAILY_MEAN</th>
-      <th>T_DAILY_AVG</th>
-      <th>P_DAILY_CALC</th>
-      <th>SOLARAD_DAILY</th>
-      <th>...</th>
-      <th>SOIL_MOISTURE_5_DAILY</th>
-      <th>SOIL_MOISTURE_10_DAILY</th>
-      <th>SOIL_MOISTURE_20_DAILY</th>
-      <th>SOIL_MOISTURE_50_DAILY</th>
-      <th>SOIL_MOISTURE_100_DAILY</th>
-      <th>SOIL_TEMP_5_DAILY</th>
-      <th>SOIL_TEMP_10_DAILY</th>
-      <th>SOIL_TEMP_20_DAILY</th>
-      <th>SOIL_TEMP_50_DAILY</th>
-      <th>SOIL_TEMP_100_DAILY</th>
-    </tr>
-    <tr>
-      <th>LST_DATE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2017-01-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>3.945161</td>
-      <td>-3.993548</td>
-      <td>-0.025806</td>
-      <td>0.038710</td>
-      <td>3.090323</td>
-      <td>4.690000</td>
-      <td>...</td>
-      <td>0.236900</td>
-      <td>0.248300</td>
-      <td>0.204550</td>
-      <td>0.152806</td>
-      <td>0.175194</td>
-      <td>0.209677</td>
-      <td>0.267742</td>
-      <td>0.696774</td>
-      <td>1.438710</td>
-      <td>2.877419</td>
-    </tr>
-    <tr>
-      <th>2017-02-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>7.246429</td>
-      <td>-4.360714</td>
-      <td>1.442857</td>
-      <td>1.839286</td>
-      <td>2.414286</td>
-      <td>10.364286</td>
-      <td>...</td>
-      <td>0.226333</td>
-      <td>0.243000</td>
-      <td>0.207545</td>
-      <td>0.152857</td>
-      <td>0.175786</td>
-      <td>1.125000</td>
-      <td>1.100000</td>
-      <td>1.192857</td>
-      <td>1.492857</td>
-      <td>2.367857</td>
-    </tr>
-    <tr>
-      <th>2017-03-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>5.164516</td>
-      <td>-5.335484</td>
-      <td>-0.090323</td>
-      <td>0.167742</td>
-      <td>3.970968</td>
-      <td>13.113548</td>
-      <td>...</td>
-      <td>0.218033</td>
-      <td>0.229267</td>
-      <td>0.196258</td>
-      <td>0.153484</td>
-      <td>0.174548</td>
-      <td>2.122581</td>
-      <td>2.161290</td>
-      <td>2.345161</td>
-      <td>2.700000</td>
-      <td>3.387097</td>
-    </tr>
-    <tr>
-      <th>2017-04-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>17.813333</td>
-      <td>5.170000</td>
-      <td>11.493333</td>
-      <td>11.540000</td>
-      <td>2.300000</td>
-      <td>14.645000</td>
-      <td>...</td>
-      <td>0.199733</td>
-      <td>0.210300</td>
-      <td>0.190667</td>
-      <td>0.151000</td>
-      <td>0.172400</td>
-      <td>11.066667</td>
-      <td>10.666667</td>
-      <td>9.636667</td>
-      <td>8.426667</td>
-      <td>6.903333</td>
-    </tr>
-    <tr>
-      <th>2017-05-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>19.151613</td>
-      <td>7.338710</td>
-      <td>13.229032</td>
-      <td>13.638710</td>
-      <td>4.141935</td>
-      <td>16.519677</td>
-      <td>...</td>
-      <td>0.206613</td>
-      <td>0.210935</td>
-      <td>0.185613</td>
-      <td>0.147710</td>
-      <td>0.170000</td>
-      <td>16.454839</td>
-      <td>16.290323</td>
-      <td>15.361290</td>
-      <td>14.270968</td>
-      <td>12.696774</td>
-    </tr>
-    <tr>
-      <th>2017-06-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>25.423333</td>
-      <td>12.176667</td>
-      <td>18.796667</td>
-      <td>18.986667</td>
-      <td>3.743333</td>
-      <td>21.655000</td>
-      <td>...</td>
-      <td>0.185167</td>
-      <td>0.184300</td>
-      <td>0.173167</td>
-      <td>0.142533</td>
-      <td>0.167000</td>
-      <td>22.350000</td>
-      <td>22.166667</td>
-      <td>20.880000</td>
-      <td>19.370000</td>
-      <td>17.333333</td>
-    </tr>
-    <tr>
-      <th>2017-07-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>26.912903</td>
-      <td>15.183871</td>
-      <td>21.048387</td>
-      <td>20.993548</td>
-      <td>2.732258</td>
-      <td>20.566129</td>
-      <td>...</td>
-      <td>0.131226</td>
-      <td>0.115774</td>
-      <td>0.116613</td>
-      <td>0.121032</td>
-      <td>0.156677</td>
-      <td>24.993548</td>
-      <td>24.980645</td>
-      <td>23.925806</td>
-      <td>22.745161</td>
-      <td>21.164516</td>
-    </tr>
-    <tr>
-      <th>2017-08-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>25.741935</td>
-      <td>12.954839</td>
-      <td>19.351613</td>
-      <td>19.477419</td>
-      <td>2.758065</td>
-      <td>18.360000</td>
-      <td>...</td>
-      <td>0.143871</td>
-      <td>0.122258</td>
-      <td>0.105452</td>
-      <td>0.115290</td>
-      <td>0.151034</td>
-      <td>23.374194</td>
-      <td>23.519355</td>
-      <td>22.848387</td>
-      <td>22.193548</td>
-      <td>21.377419</td>
-    </tr>
-    <tr>
-      <th>2017-09-01</th>
-      <td>64756.0</td>
-      <td>2.422000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>24.186667</td>
-      <td>11.300000</td>
-      <td>17.746667</td>
-      <td>17.463333</td>
-      <td>1.893333</td>
-      <td>15.154667</td>
-      <td>...</td>
-      <td>0.145167</td>
-      <td>0.139633</td>
-      <td>0.117267</td>
-      <td>0.112167</td>
-      <td>0.141926</td>
-      <td>20.256667</td>
-      <td>20.386667</td>
-      <td>19.966667</td>
-      <td>19.766667</td>
-      <td>19.530000</td>
-    </tr>
-    <tr>
-      <th>2017-10-01</th>
-      <td>64756.0</td>
-      <td>2.602645</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>21.043333</td>
-      <td>7.150000</td>
-      <td>14.100000</td>
-      <td>13.976667</td>
-      <td>3.500000</td>
-      <td>10.395000</td>
-      <td>...</td>
-      <td>0.151767</td>
-      <td>0.137767</td>
-      <td>0.111900</td>
-      <td>0.108900</td>
-      <td>0.122067</td>
-      <td>16.086667</td>
-      <td>16.193333</td>
-      <td>16.370000</td>
-      <td>16.893333</td>
-      <td>17.386667</td>
-    </tr>
-    <tr>
-      <th>2017-11-01</th>
-      <td>64756.0</td>
-      <td>2.622000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>10.346667</td>
-      <td>-2.093333</td>
-      <td>4.120000</td>
-      <td>4.336667</td>
-      <td>0.826667</td>
-      <td>6.723333</td>
-      <td>...</td>
-      <td>0.241633</td>
-      <td>0.224467</td>
-      <td>0.203367</td>
-      <td>0.159500</td>
-      <td>0.155233</td>
-      <td>7.056667</td>
-      <td>7.273333</td>
-      <td>8.043333</td>
-      <td>9.633333</td>
-      <td>11.440000</td>
-    </tr>
-    <tr>
-      <th>2017-12-01</th>
-      <td>64756.0</td>
-      <td>2.622000</td>
-      <td>-73.74</td>
-      <td>41.79</td>
-      <td>1.496774</td>
-      <td>-7.412903</td>
-      <td>-2.967742</td>
-      <td>-2.838710</td>
-      <td>2.109677</td>
-      <td>4.474194</td>
-      <td>...</td>
-      <td>0.255929</td>
-      <td>0.239071</td>
-      <td>0.213258</td>
-      <td>0.165387</td>
-      <td>0.163290</td>
-      <td>2.064516</td>
-      <td>2.241935</td>
-      <td>2.874194</td>
-      <td>4.248387</td>
-      <td>6.019355</td>
-    </tr>
-  </tbody>
-</table>
-<p>12 rows × 26 columns</p>
-</div></div></div>
 </div>
 <p>We can chain all of that together</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mm</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_mm</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;number&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">df_mm</span><span class="p">[[</span><span class="s1">&#39;T_DAILY_MIN&#39;</span><span class="p">,</span> <span class="s1">&#39;T_DAILY_MEAN&#39;</span><span class="p">,</span> <span class="s1">&#39;T_DAILY_MAX&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;LST_DATE&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/basic_pandas_97_1.png" src="../../_images/basic_pandas_97_1.png" />
+<img alt="../../_images/basic_pandas_96_1.png" src="../../_images/basic_pandas_96_1.png" />
 </div>
 </div>
 <p>Next time we will dig deeper into resampling, rolling means, and grouping operations (groupby).</p>
@@ -4108,16 +3742,16 @@ Name: 2017-08-07 00:00:00, dtype: object
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "learning"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "learning",
             path: "./lectures/pandas"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'learning'</script>
 
               </div>
               

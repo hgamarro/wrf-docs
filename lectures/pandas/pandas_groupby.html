@@ -264,23 +264,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray-part2.html">
+    <a class="reference internal" href="../xarray/part2_xarray.html">
      Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
     </a>
    </li>
   </ul>
@@ -740,8 +725,10 @@ The point of this lesson is to make you feel confident in using <code class="doc
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># %matplotlib inline</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -749,7 +736,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 <p>First we read the Earthquake data from our previous assignment:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://www.ldeo.columbia.edu/~rpa/usgs_earthquakes_2014.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../assignments/data/query.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">place</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">df_small</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">mag</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">mag</span><span class="o">&gt;</span><span class="mi">4</span><span class="p">]</span>
@@ -759,17 +746,17 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -786,10 +773,16 @@ The point of this lesson is to make you feel confident in using <code class="doc
       <th>gap</th>
       <th>dmin</th>
       <th>rms</th>
-      <th>net</th>
-      <th>updated</th>
+      <th>...</th>
       <th>place</th>
       <th>type</th>
+      <th>horizontalError</th>
+      <th>depthError</th>
+      <th>magError</th>
+      <th>magNst</th>
+      <th>status</th>
+      <th>locationSource</th>
+      <th>magSource</th>
       <th>country</th>
     </tr>
     <tr>
@@ -809,101 +802,138 @@ The point of this lesson is to make you feel confident in using <code class="doc
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>usc000mqlp</th>
-      <td>2014-01-31 23:08:03.660</td>
-      <td>-4.9758</td>
-      <td>153.9466</td>
-      <td>110.18</td>
-      <td>4.2</td>
+      <th>usc000swlj</th>
+      <td>2014-10-31 23:58:39.420000+00:00</td>
+      <td>-22.4417</td>
+      <td>-179.0532</td>
+      <td>442.29</td>
+      <td>4.1</td>
       <td>mb</td>
       <td>NaN</td>
-      <td>98.0</td>
-      <td>1.940</td>
-      <td>0.61</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:19.000Z</td>
-      <td>115km ESE of Taron, Papua New Guinea</td>
+      <td>57.0</td>
+      <td>5.406</td>
+      <td>0.76</td>
+      <td>...</td>
+      <td>south of the Fiji Islands</td>
       <td>earthquake</td>
-      <td>Papua New Guinea</td>
+      <td>6.3</td>
+      <td>9.8</td>
+      <td>0.103</td>
+      <td>27.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+      <td>south of the Fiji Islands</td>
     </tr>
     <tr>
-      <th>usc000mqln</th>
-      <td>2014-01-31 22:54:32.970</td>
-      <td>-28.1775</td>
-      <td>-177.9058</td>
-      <td>95.84</td>
-      <td>4.3</td>
-      <td>mb</td>
-      <td>NaN</td>
-      <td>104.0</td>
-      <td>1.063</td>
-      <td>1.14</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:19.000Z</td>
-      <td>120km N of Raoul Island, New Zealand</td>
-      <td>earthquake</td>
-      <td>New Zealand</td>
-    </tr>
-    <tr>
-      <th>usc000mqls</th>
-      <td>2014-01-31 22:49:49.740</td>
-      <td>-23.1192</td>
-      <td>179.1174</td>
-      <td>528.34</td>
+      <th>usc000sta3</th>
+      <td>2014-10-31 23:15:33.940000+00:00</td>
+      <td>40.3453</td>
+      <td>71.5875</td>
+      <td>10.00</td>
       <td>4.4</td>
       <td>mb</td>
       <td>NaN</td>
-      <td>80.0</td>
-      <td>5.439</td>
-      <td>0.95</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:19.000Z</td>
-      <td>South of the Fiji Islands</td>
+      <td>46.0</td>
+      <td>0.653</td>
+      <td>1.36</td>
+      <td>...</td>
+      <td>10 km ESE of Oltiariq, Uzbekistan</td>
       <td>earthquake</td>
-      <td>South of the Fiji Islands</td>
+      <td>2.9</td>
+      <td>1.8</td>
+      <td>0.117</td>
+      <td>24.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+      <td>Uzbekistan</td>
     </tr>
     <tr>
-      <th>usc000mf1x</th>
-      <td>2014-01-31 22:19:44.330</td>
-      <td>51.1569</td>
-      <td>-178.0910</td>
-      <td>37.50</td>
-      <td>4.2</td>
-      <td>mb</td>
+      <th>usc000st9z</th>
+      <td>2014-10-31 23:00:04+00:00</td>
+      <td>45.1647</td>
+      <td>22.2912</td>
+      <td>4.10</td>
+      <td>4.1</td>
+      <td>mwr</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.83</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:19.000Z</td>
-      <td>72km E of Amatignak Island, Alaska</td>
+      <td>74.0</td>
+      <td>0.410</td>
+      <td>1.00</td>
+      <td>...</td>
+      <td>1 km NNE of Teregova, Romania</td>
       <td>earthquake</td>
-      <td>Alaska</td>
+      <td>3.1</td>
+      <td>1.7</td>
+      <td>0.053</td>
+      <td>34.0</td>
+      <td>reviewed</td>
+      <td>buc</td>
+      <td>us</td>
+      <td>Romania</td>
     </tr>
     <tr>
-      <th>usc000mqlm</th>
-      <td>2014-01-31 21:56:44.320</td>
-      <td>-4.8800</td>
-      <td>153.8434</td>
-      <td>112.66</td>
-      <td>4.3</td>
+      <th>usc000st9w</th>
+      <td>2014-10-31 22:45:19.200000+00:00</td>
+      <td>-4.5943</td>
+      <td>153.0138</td>
+      <td>66.11</td>
+      <td>4.8</td>
       <td>mb</td>
       <td>NaN</td>
-      <td>199.0</td>
-      <td>1.808</td>
-      <td>0.79</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:19.000Z</td>
-      <td>100km ESE of Taron, Papua New Guinea</td>
+      <td>51.0</td>
+      <td>0.937</td>
+      <td>0.74</td>
+      <td>...</td>
+      <td>87 km ESE of Kokopo, Papua New Guinea</td>
       <td>earthquake</td>
+      <td>5.3</td>
+      <td>5.1</td>
+      <td>0.054</td>
+      <td>108.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
       <td>Papua New Guinea</td>
+    </tr>
+    <tr>
+      <th>usc000st92</th>
+      <td>2014-10-31 21:32:26.100000+00:00</td>
+      <td>64.6210</td>
+      <td>-17.7770</td>
+      <td>10.40</td>
+      <td>5.0</td>
+      <td>mb</td>
+      <td>NaN</td>
+      <td>34.0</td>
+      <td>1.531</td>
+      <td>0.78</td>
+      <td>...</td>
+      <td>119 km S of Akureyri, Iceland</td>
+      <td>earthquake</td>
+      <td>5.8</td>
+      <td>3.5</td>
+      <td>0.029</td>
+      <td>417.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+      <td>Iceland</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 <section id="an-example">
@@ -916,7 +946,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112e20780&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;country&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_5_1.png" src="../../_images/pandas_groupby_5_1.png" />
@@ -929,7 +959,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112b42d68&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;country&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_6_1.png" src="../../_images/pandas_groupby_6_1.png" />
@@ -959,7 +989,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.DataFrameGroupBy object at 0x10626f358&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x151551d542d0&gt;
 </pre></div>
 </div>
 </div>
@@ -972,7 +1002,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.DataFrameGroupBy object at 0x10626f208&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x151551d39220&gt;
 </pre></div>
 </div>
 </div>
@@ -989,7 +1019,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.DataFrameGroupBy object at 0x1131bcf60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x151551d395b0&gt;
 </pre></div>
 </div>
 </div>
@@ -1002,7 +1032,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>262
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>267
 </pre></div>
 </div>
 </div>
@@ -1016,7 +1046,7 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>262
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>267
 </pre></div>
 </div>
 </div>
@@ -1028,73 +1058,61 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;&#39;,
- &#39;Afghanistan&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Afghanistan&#39;,
+ &#39;Afghanistan-Tajikistan-Pakistan region&#39;,
  &#39;Alaska&#39;,
  &#39;Albania&#39;,
  &#39;Algeria&#39;,
- &#39;American Samoa&#39;,
- &#39;Angola&#39;,
  &#39;Anguilla&#39;,
- &#39;Antarctica&#39;,
+ &#39;Antigua and Barbuda&#39;,
  &#39;Argentina&#39;,
  &#39;Arizona&#39;,
- &#39;Aruba&#39;,
  &#39;Ascension Island region&#39;,
  &#39;Australia&#39;,
  &#39;Azerbaijan&#39;,
  &#39;Azores Islands region&#39;,
  &#39;Azores-Cape St. Vincent Ridge&#39;,
+ &#39;Baffin Bay&#39;,
  &#39;Balleny Islands region&#39;,
  &#39;Banda Sea&#39;,
  &#39;Bangladesh&#39;,
- &#39;Barbados&#39;,
- &#39;Barbuda&#39;,
  &#39;Bay of Bengal&#39;,
+ &#39;Beaufort Sea&#39;,
  &#39;Bermuda&#39;,
- &#39;Bhutan&#39;,
+ &#39;Bismarck Sea&#39;,
  &#39;Bolivia&#39;,
  &#39;Bosnia and Herzegovina&#39;,
- &#39;Bouvet Island&#39;,
  &#39;Bouvet Island region&#39;,
  &#39;Brazil&#39;,
- &#39;British Indian Ocean Territory&#39;,
- &#39;British Virgin Islands&#39;,
- &#39;Burma&#39;,
  &#39;Burundi&#39;,
+ &#39;CA&#39;,
  &#39;California&#39;,
+ &#39;California Earthquake&#39;,
  &#39;Canada&#39;,
- &#39;Cape Verde&#39;,
  &#39;Carlsberg Ridge&#39;,
  &#39;Cayman Islands&#39;,
  &#39;Celebes Sea&#39;,
- &#39;Central East Pacific Rise&#39;,
- &#39;Central Mid-Atlantic Ridge&#39;,
+ &#39;Central Alaska&#39;,
+ &#39;Central Turkey&#39;,
  &#39;Chagos Archipelago region&#39;,
  &#39;Chile&#39;,
+ &#39;Chile-Bolivia border region&#39;,
  &#39;China&#39;,
- &#39;Christmas Island&#39;,
  &#39;Colombia&#39;,
+ &#39;Colombia-Ecuador border region&#39;,
  &#39;Comoros&#39;,
- &#39;Cook Islands&#39;,
  &#39;Costa Rica&#39;,
  &#39;Crozet Islands region&#39;,
  &#39;Cuba&#39;,
+ &#39;Cuba region&#39;,
  &#39;Cyprus&#39;,
+ &quot;D&#39;Entrecasteaux Islands region&quot;,
  &#39;Davis Strait&#39;,
- &#39;Democratic Republic of the Congo&#39;,
  &#39;Djibouti&#39;,
  &#39;Dominica&#39;,
  &#39;Dominican Republic&#39;,
- &#39;Drake Passage&#39;,
- &#39;East Timor&#39;,
- &#39;East of Severnaya Zemlya&#39;,
- &#39;East of the Kuril Islands&#39;,
- &#39;East of the North Island of New Zealand&#39;,
- &#39;East of the Philippine Islands&#39;,
- &#39;East of the South Sandwich Islands&#39;,
+ &#39;East Timor region&#39;,
  &#39;Easter Island region&#39;,
- &#39;Eastern Greenland&#39;,
  &#39;Ecuador&#39;,
  &#39;Ecuador region&#39;,
  &#39;Egypt&#39;,
@@ -1102,20 +1120,22 @@ The point of this lesson is to make you feel confident in using <code class="doc
  &#39;Eritrea&#39;,
  &#39;Ethiopia&#39;,
  &#39;Falkland Islands region&#39;,
+ &#39;Federated States of Micronesia&#39;,
  &#39;Federated States of Micronesia region&#39;,
  &#39;Fiji&#39;,
  &#39;Fiji region&#39;,
  &#39;France&#39;,
  &#39;French Polynesia&#39;,
  &#39;French Southern Territories&#39;,
- &#39;Galapagos Triple Junction region&#39;,
  &#39;Georgia&#39;,
  &#39;Greece&#39;,
  &#39;Greenland&#39;,
  &#39;Greenland Sea&#39;,
  &#39;Guadeloupe&#39;,
  &#39;Guam&#39;,
+ &#39;Guam region&#39;,
  &#39;Guatemala&#39;,
+ &#39;Gulf of Aden&#39;,
  &#39;Gulf of Alaska&#39;,
  &#39;Haiti&#39;,
  &#39;Hawaii&#39;,
@@ -1127,64 +1147,55 @@ The point of this lesson is to make you feel confident in using <code class="doc
  &#39;Indian Ocean Triple Junction&#39;,
  &#39;Indonesia&#39;,
  &#39;Iran&#39;,
+ &#39;Iran-Iraq border region&#39;,
  &#39;Iraq&#39;,
  &#39;Italy&#39;,
+ &#39;Jan Mayen Island region&#39;,
  &#39;Japan&#39;,
  &#39;Japan region&#39;,
  &#39;Jordan&#39;,
  &#39;Kansas&#39;,
+ &#39;Kashmir-Xinjiang border region&#39;,
  &#39;Kazakhstan&#39;,
+ &#39;Kazakhstan-Xinjiang border region&#39;,
  &#39;Kermadec Islands region&#39;,
- &#39;Kosovo&#39;,
  &#39;Kuril Islands&#39;,
  &#39;Kyrgyzstan&#39;,
+ &#39;Kyrgyzstan-Tajikistan border region&#39;,
+ &#39;Kyrgyzstan-Xinjiang border region&#39;,
  &#39;Labrador Sea&#39;,
+ &#39;Laos&#39;,
  &#39;Laptev Sea&#39;,
- &#39;Macedonia&#39;,
+ &#39;MX&#39;,
  &#39;Macquarie Island region&#39;,
- &#39;Malawi&#39;,
  &#39;Malaysia&#39;,
  &#39;Mariana Islands region&#39;,
  &#39;Martinique&#39;,
  &#39;Mauritania&#39;,
- &#39;Mauritius&#39;,
  &#39;Mauritius - Reunion region&#39;,
  &#39;Mexico&#39;,
  &#39;Micronesia&#39;,
  &#39;Mid-Indian Ridge&#39;,
  &#39;Molucca Sea&#39;,
  &#39;Mongolia&#39;,
- &#39;Montana&#39;,
  &#39;Montenegro&#39;,
  &#39;Morocco&#39;,
  &#39;Mozambique&#39;,
  &#39;Mozambique Channel&#39;,
+ &#39;Myanmar&#39;,
+ &#39;Myanmar-China border region&#39;,
  &#39;Nepal&#39;,
  &#39;New Caledonia&#39;,
- &#39;New Mexico&#39;,
  &#39;New Zealand&#39;,
+ &#39;New Zealand region&#39;,
  &#39;Nicaragua&#39;,
- &#39;Niue&#39;,
  &#39;North Atlantic Ocean&#39;,
  &#39;North Indian Ocean&#39;,
+ &#39;North Island of New Zealand&#39;,
  &#39;North Korea&#39;,
- &#39;North of Ascension Island&#39;,
- &#39;North of Franz Josef Land&#39;,
- &#39;North of New Zealand&#39;,
- &#39;North of Severnaya Zemlya&#39;,
- &#39;North of Svalbard&#39;,
- &#39;Northern East Pacific Rise&#39;,
  &#39;Northern Mariana Islands&#39;,
- &#39;Northern Mid-Atlantic Ridge&#39;,
- &#39;Northwest of Australia&#39;,
  &#39;Norway&#39;,
  &#39;Norwegian Sea&#39;,
- &#39;Off the coast of Central America&#39;,
- &#39;Off the coast of Ecuador&#39;,
- &#39;Off the coast of Oregon&#39;,
- &#39;Off the east coast of the North Island of New Zealand&#39;,
- &#39;Off the south coast of Australia&#39;,
- &#39;Off the west coast of northern Sumatra&#39;,
  &#39;Oklahoma&#39;,
  &#39;Oman&#39;,
  &#39;Oregon&#39;,
@@ -1192,84 +1203,59 @@ The point of this lesson is to make you feel confident in using <code class="doc
  &#39;Pacific-Antarctic Ridge&#39;,
  &#39;Pakistan&#39;,
  &#39;Palau&#39;,
- &#39;Palau region&#39;,
  &#39;Panama&#39;,
  &#39;Papua New Guinea&#39;,
  &#39;Peru&#39;,
- &#39;Peru-Ecuador border region&#39;,
  &#39;Philippine Islands region&#39;,
  &#39;Philippines&#39;,
  &#39;Poland&#39;,
  &#39;Portugal&#39;,
- &#39;Portugal region&#39;,
- &#39;Prince Edward Islands&#39;,
  &#39;Prince Edward Islands region&#39;,
  &#39;Puerto Rico&#39;,
- &#39;Republic of the Congo&#39;,
+ &#39;Revilla Gigedo Islands region&#39;,
  &#39;Reykjanes Ridge&#39;,
  &#39;Romania&#39;,
  &#39;Russia&#39;,
  &#39;Russia region&#39;,
  &#39;Saint Helena&#39;,
- &#39;Saint Lucia&#39;,
  &#39;Saint Vincent and the Grenadines&#39;,
  &#39;Samoa&#39;,
- &#39;Santa Cruz Islands region&#39;,
+ &#39;Santa Cruz Islands&#39;,
  &#39;Saudi Arabia&#39;,
  &#39;Scotia Sea&#39;,
  &#39;Sea of Okhotsk&#39;,
- &#39;Serbia&#39;,
  &#39;Slovenia&#39;,
  &#39;Socotra region&#39;,
  &#39;Solomon Islands&#39;,
  &#39;Somalia&#39;,
  &#39;South Africa&#39;,
  &#39;South Atlantic Ocean&#39;,
- &#39;South Carolina&#39;,
  &#39;South Georgia Island region&#39;,
- &#39;South Georgia and the South Sandwich Islands&#39;,
  &#39;South Indian Ocean&#39;,
- &#39;South Napa Earthquake&#39;,
- &#39;South Sandwich Islands&#39;,
  &#39;South Sandwich Islands region&#39;,
  &#39;South Shetland Islands&#39;,
- &#39;South Sudan&#39;,
- &#39;South of Africa&#39;,
- &#39;South of Australia&#39;,
- &#39;South of Panama&#39;,
- &#39;South of Tasmania&#39;,
- &#39;South of Tonga&#39;,
- &#39;South of the Fiji Islands&#39;,
- &#39;South of the Kermadec Islands&#39;,
- &#39;South of the Mariana Islands&#39;,
- &#39;Southeast Indian Ridge&#39;,
- &#39;Southeast central Pacific Ocean&#39;,
- &#39;Southeast of Easter Island&#39;,
- &#39;Southern East Pacific Rise&#39;,
- &#39;Southern Mid-Atlantic Ridge&#39;,
- &#39;Southern Pacific Ocean&#39;,
  &#39;Southwest Indian Ridge&#39;,
- &#39;Southwest of Africa&#39;,
- &#39;Southwest of Australia&#39;,
- &#39;Southwestern Atlantic Ocean&#39;,
  &#39;Spain&#39;,
  &#39;Sudan&#39;,
  &#39;Svalbard and Jan Mayen&#39;,
  &#39;Sweden&#39;,
  &#39;Syria&#39;,
  &#39;Taiwan&#39;,
+ &#39;Taiwan region&#39;,
  &#39;Tajikistan&#39;,
+ &#39;Tajikistan-Xinjiang border region&#39;,
  &#39;Tanzania&#39;,
  &#39;Thailand&#39;,
+ &#39;Timor Leste&#39;,
  &#39;Tonga&#39;,
  &#39;Tonga region&#39;,
  &#39;Trinidad and Tobago&#39;,
  &#39;Tristan da Cunha region&#39;,
  &#39;Turkey&#39;,
  &#39;Turkmenistan&#39;,
+ &#39;U.S. Virgin Islands&#39;,
  &#39;Uganda&#39;,
  &#39;Ukraine&#39;,
- &#39;United Kingdom&#39;,
  &#39;Utah&#39;,
  &#39;Uzbekistan&#39;,
  &#39;Vanuatu&#39;,
@@ -1278,17 +1264,66 @@ The point of this lesson is to make you feel confident in using <code class="doc
  &#39;Vietnam&#39;,
  &#39;Wallis and Futuna&#39;,
  &#39;West Chile Rise&#39;,
- &#39;West of Australia&#39;,
- &#39;West of Macquarie Island&#39;,
- &#39;West of Vancouver Island&#39;,
- &#39;West of the Galapagos Islands&#39;,
  &#39;Western Australia&#39;,
- &#39;Western Indian-Antarctic Ridge&#39;,
+ &#39;Western Turkey&#39;,
+ &#39;Wyoming&#39;,
+ &#39;Xizang-Qinghai border region&#39;,
  &#39;Yemen&#39;,
  &#39;Zambia&#39;,
+ &#39;central East Pacific Rise&#39;,
+ &#39;central Mid-Atlantic Ridge&#39;,
+ &#39;central Peru&#39;,
+ &#39;east of Severnaya Zemlya&#39;,
+ &#39;east of the Kuril Islands&#39;,
+ &#39;east of the North Island of New Zealand&#39;,
+ &#39;east of the Philippine Islands&#39;,
+ &#39;east of the South Sandwich Islands&#39;,
+ &#39;eastern Turkey&#39;,
+ &#39;near the coast of Ecuador&#39;,
+ &#39;near the coast of Nicaragua&#39;,
+ &#39;near the coast of central Peru&#39;,
+ &#39;near the south coast of Myanmar&#39;,
+ &#39;near the west coast of Colombia&#39;,
  &#39;north of Ascension Island&#39;,
+ &#39;north of Franz Josef Land&#39;,
+ &#39;north of New Zealand&#39;,
+ &#39;north of Severnaya Zemlya&#39;,
+ &#39;north of Svalbard&#39;,
+ &#39;northern Alaska&#39;,
+ &#39;northern East Pacific Rise&#39;,
  &#39;northern Mid-Atlantic Ridge&#39;,
+ &#39;northwest of Australia&#39;,
+ &#39;northwest of the Kuril Islands&#39;,
+ &#39;off the coast of Central America&#39;,
+ &#39;off the coast of Ecuador&#39;,
+ &#39;off the coast of Oregon&#39;,
+ &#39;off the east coast of the North Island of New Zealand&#39;,
+ &#39;off the west coast of northern Sumatra&#39;,
+ &#39;south of Africa&#39;,
+ &#39;south of Australia&#39;,
  &#39;south of Panama&#39;,
+ &#39;south of Tonga&#39;,
+ &#39;south of the Fiji Islands&#39;,
+ &#39;south of the Kermadec Islands&#39;,
+ &#39;south of the Mariana Islands&#39;,
+ &#39;southeast Indian Ridge&#39;,
+ &#39;southeast central Pacific Ocean&#39;,
+ &#39;southeast of Easter Island&#39;,
+ &#39;southeast of the Loyalty Islands&#39;,
+ &#39;southern East Pacific Rise&#39;,
+ &#39;southern Iran&#39;,
+ &#39;southern Mid-Atlantic Ridge&#39;,
+ &#39;southern Pacific Ocean&#39;,
+ &#39;southern Peru&#39;,
+ &#39;southwest of Africa&#39;,
+ &#39;southwest of Australia&#39;,
+ &#39;southwestern Atlantic Ocean&#39;,
+ &#39;west of Australia&#39;,
+ &#39;west of Macquarie Island&#39;,
+ &#39;west of Vancouver Island&#39;,
+ &#39;west of the Galapagos Islands&#39;,
+ &#39;western Greenland&#39;,
+ &#39;western Indian-Antarctic Ridge&#39;,
  &#39;western Xizang&#39;]
 </pre></div>
 </div>
@@ -1309,17 +1344,17 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -1336,10 +1371,16 @@ The point of this lesson is to make you feel confident in using <code class="doc
       <th>gap</th>
       <th>dmin</th>
       <th>rms</th>
-      <th>net</th>
-      <th>updated</th>
+      <th>...</th>
       <th>place</th>
       <th>type</th>
+      <th>horizontalError</th>
+      <th>depthError</th>
+      <th>magError</th>
+      <th>magNst</th>
+      <th>status</th>
+      <th>locationSource</th>
+      <th>magSource</th>
       <th>country</th>
     </tr>
     <tr>
@@ -1359,102 +1400,139 @@ The point of this lesson is to make you feel confident in using <code class="doc
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>usc000mkc8</th>
-      <td>2014-01-25 16:10:38.760</td>
-      <td>-55.2925</td>
-      <td>-27.0527</td>
-      <td>10.00</td>
+      <th>usb000sr62</th>
+      <td>2014-10-28 18:52:11.630000+00:00</td>
+      <td>36.5171</td>
+      <td>71.3805</td>
+      <td>94.86</td>
+      <td>4.5</td>
+      <td>mb</td>
+      <td>NaN</td>
+      <td>74.0</td>
+      <td>0.886</td>
+      <td>1.10</td>
+      <td>...</td>
+      <td>22 km SW of Ashk?sham, Afghanistan</td>
+      <td>earthquake</td>
+      <td>5.4</td>
+      <td>6.6</td>
+      <td>0.096</td>
+      <td>37.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+      <td>Afghanistan</td>
+    </tr>
+    <tr>
+      <th>usb000sr0a</th>
+      <td>2014-10-28 00:54:22.490000+00:00</td>
+      <td>36.5401</td>
+      <td>70.9566</td>
+      <td>156.80</td>
       <td>4.1</td>
       <td>mb</td>
       <td>NaN</td>
-      <td>97.0</td>
-      <td>5.553</td>
-      <td>0.35</td>
-      <td>us</td>
-      <td>2014-03-27T18:15:40.000Z</td>
-      <td>156km N of Visokoi Island,</td>
+      <td>76.0</td>
+      <td>0.659</td>
+      <td>0.88</td>
+      <td>...</td>
+      <td>37 km SSE of Jurm, Afghanistan</td>
       <td>earthquake</td>
-      <td></td>
+      <td>3.0</td>
+      <td>5.6</td>
+      <td>0.105</td>
+      <td>26.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+      <td>Afghanistan</td>
     </tr>
     <tr>
-      <th>usc000mkc7</th>
-      <td>2014-01-25 09:43:23.230</td>
-      <td>-55.9434</td>
-      <td>-27.6772</td>
-      <td>103.48</td>
-      <td>4.3</td>
+      <th>usb000sqa0</th>
+      <td>2014-10-24 09:52:48.730000+00:00</td>
+      <td>36.5657</td>
+      <td>71.1712</td>
+      <td>94.52</td>
+      <td>4.5</td>
       <td>mb</td>
       <td>NaN</td>
-      <td>87.0</td>
-      <td>5.324</td>
-      <td>0.62</td>
-      <td>us</td>
-      <td>2014-03-27T18:15:40.000Z</td>
-      <td>89km NNW of Visokoi Island,</td>
+      <td>71.0</td>
+      <td>0.735</td>
+      <td>1.47</td>
+      <td>...</td>
+      <td>34 km WSW of Ashk?sham, Afghanistan</td>
       <td>earthquake</td>
-      <td></td>
+      <td>6.1</td>
+      <td>6.2</td>
+      <td>0.111</td>
+      <td>25.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+      <td>Afghanistan</td>
     </tr>
     <tr>
-      <th>usc000mh0c</th>
-      <td>2014-01-19 15:42:45.510</td>
-      <td>-56.9656</td>
-      <td>-26.7803</td>
-      <td>120.25</td>
-      <td>4.6</td>
+      <th>usb000sq97</th>
+      <td>2014-10-24 03:17:05.650000+00:00</td>
+      <td>36.6557</td>
+      <td>71.1489</td>
+      <td>78.97</td>
+      <td>4.5</td>
       <td>mb</td>
       <td>NaN</td>
-      <td>151.0</td>
-      <td>6.120</td>
-      <td>0.39</td>
-      <td>us</td>
-      <td>2014-03-22T00:05:23.000Z</td>
-      <td>39km SE of Visokoi Island,</td>
+      <td>70.0</td>
+      <td>0.656</td>
+      <td>1.25</td>
+      <td>...</td>
+      <td>34 km W of Ashk?sham, Afghanistan</td>
       <td>earthquake</td>
-      <td></td>
+      <td>5.3</td>
+      <td>5.7</td>
+      <td>0.136</td>
+      <td>28.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+      <td>Afghanistan</td>
     </tr>
     <tr>
-      <th>usb000m7f2</th>
-      <td>2014-01-10 13:50:38.730</td>
-      <td>-56.0110</td>
-      <td>-26.1186</td>
-      <td>10.00</td>
+      <th>usb000spi8</th>
+      <td>2014-10-21 17:35:25.340000+00:00</td>
+      <td>36.3417</td>
+      <td>70.5034</td>
+      <td>175.12</td>
       <td>4.2</td>
       <td>mb</td>
       <td>NaN</td>
-      <td>106.0</td>
-      <td>6.192</td>
-      <td>0.71</td>
-      <td>us</td>
-      <td>2014-03-15T03:38:58.000Z</td>
-      <td>101km NE of Visokoi Island,</td>
+      <td>75.0</td>
+      <td>0.784</td>
+      <td>0.86</td>
+      <td>...</td>
+      <td>Hindu Kush region, Afghanistan</td>
       <td>earthquake</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>usb000m78v</th>
-      <td>2014-01-07 06:51:09.160</td>
-      <td>-56.9651</td>
-      <td>-26.6696</td>
-      <td>124.37</td>
-      <td>4.3</td>
-      <td>mb</td>
-      <td>NaN</td>
-      <td>109.0</td>
-      <td>6.176</td>
-      <td>0.59</td>
+      <td>7.7</td>
+      <td>8.2</td>
+      <td>0.132</td>
+      <td>18.0</td>
+      <td>reviewed</td>
       <td>us</td>
-      <td>2014-03-07T00:26:01.000Z</td>
-      <td>43km SE of Visokoi Island,</td>
-      <td>earthquake</td>
-      <td></td>
+      <td>us</td>
+      <td>Afghanistan</td>
     </tr>
   </tbody>
 </table>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The key is &quot;&quot;
+<p>5 rows × 22 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The key is &quot;Afghanistan&quot;
 </pre></div>
 </div>
 </div>
@@ -1468,17 +1546,17 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -1495,10 +1573,16 @@ The point of this lesson is to make you feel confident in using <code class="doc
       <th>gap</th>
       <th>dmin</th>
       <th>rms</th>
-      <th>net</th>
-      <th>updated</th>
+      <th>...</th>
       <th>place</th>
       <th>type</th>
+      <th>horizontalError</th>
+      <th>depthError</th>
+      <th>magError</th>
+      <th>magNst</th>
+      <th>status</th>
+      <th>locationSource</th>
+      <th>magSource</th>
       <th>country</th>
     </tr>
     <tr>
@@ -1518,101 +1602,138 @@ The point of this lesson is to make you feel confident in using <code class="doc
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>usc000mqlq</th>
-      <td>2014-01-31 20:00:16.000</td>
-      <td>-33.6550</td>
-      <td>-71.9810</td>
-      <td>25.10</td>
-      <td>4.5</td>
-      <td>mb</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.63</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:19.000Z</td>
-      <td>34km WSW of San Antonio, Chile</td>
-      <td>earthquake</td>
-      <td>Chile</td>
-    </tr>
-    <tr>
-      <th>usc000mql6</th>
-      <td>2014-01-31 13:48:23.000</td>
-      <td>-18.0690</td>
-      <td>-69.6630</td>
-      <td>149.10</td>
-      <td>4.3</td>
-      <td>mb</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.77</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:18.000Z</td>
-      <td>17km NW of Putre, Chile</td>
-      <td>earthquake</td>
-      <td>Chile</td>
-    </tr>
-    <tr>
-      <th>usc000mqk8</th>
-      <td>2014-01-30 14:20:56.560</td>
-      <td>-19.6118</td>
-      <td>-70.9487</td>
-      <td>15.16</td>
+      <th>usb000srx7</th>
+      <td>2014-10-31 04:23:04+00:00</td>
+      <td>-34.5790</td>
+      <td>-71.0550</td>
+      <td>75.90</td>
       <td>4.1</td>
       <td>mb</td>
       <td>NaN</td>
-      <td>159.0</td>
-      <td>1.227</td>
-      <td>1.34</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:17.000Z</td>
-      <td>107km NW of Iquique, Chile</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.61</td>
+      <td>...</td>
+      <td>Libertador General Bernardo O'Higgins, Chile</td>
       <td>earthquake</td>
+      <td>7.2</td>
+      <td>5.5</td>
+      <td>0.368</td>
+      <td>7.0</td>
+      <td>reviewed</td>
+      <td>guc</td>
+      <td>us</td>
       <td>Chile</td>
     </tr>
     <tr>
-      <th>usc000mdi2</th>
-      <td>2014-01-30 10:02:14.000</td>
-      <td>-32.1180</td>
-      <td>-71.7860</td>
-      <td>25.70</td>
-      <td>4.5</td>
+      <th>usb000srwp</th>
+      <td>2014-10-31 02:46:43+00:00</td>
+      <td>-19.3900</td>
+      <td>-69.1960</td>
+      <td>113.40</td>
+      <td>4.4</td>
       <td>mwr</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.10</td>
-      <td>us</td>
-      <td>2015-01-30T21:28:21.955Z</td>
-      <td>64km NW of La Ligua, Chile</td>
+      <td>1.02</td>
+      <td>...</td>
+      <td>135 km NE of Iquique, Chile</td>
       <td>earthquake</td>
+      <td>6.4</td>
+      <td>4.2</td>
+      <td>0.055</td>
+      <td>32.0</td>
+      <td>reviewed</td>
+      <td>guc</td>
+      <td>us</td>
       <td>Chile</td>
     </tr>
     <tr>
-      <th>usc000mqeh</th>
-      <td>2014-01-29 18:58:23.000</td>
-      <td>-18.6610</td>
-      <td>-69.6440</td>
-      <td>123.10</td>
-      <td>4.8</td>
+      <th>usb000squ4</th>
+      <td>2014-10-27 06:07:23.410000+00:00</td>
+      <td>-34.5269</td>
+      <td>-73.4779</td>
+      <td>17.97</td>
+      <td>4.4</td>
+      <td>mb</td>
+      <td>NaN</td>
+      <td>100.0</td>
+      <td>1.362</td>
+      <td>0.94</td>
+      <td>...</td>
+      <td>132 km NW of Constitución, Chile</td>
+      <td>earthquake</td>
+      <td>4.5</td>
+      <td>5.9</td>
+      <td>0.537</td>
+      <td>1.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+      <td>Chile</td>
+    </tr>
+    <tr>
+      <th>usb000sqp0</th>
+      <td>2014-10-26 02:52:53+00:00</td>
+      <td>-20.5680</td>
+      <td>-70.5530</td>
+      <td>44.80</td>
+      <td>4.7</td>
       <td>mb</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.52</td>
-      <td>us</td>
-      <td>2014-04-08T01:43:16.000Z</td>
-      <td>51km S of Putre, Chile</td>
+      <td>1.26</td>
+      <td>...</td>
+      <td>57 km SW of Iquique, Chile</td>
       <td>earthquake</td>
+      <td>4.9</td>
+      <td>4.1</td>
+      <td>0.110</td>
+      <td>52.0</td>
+      <td>reviewed</td>
+      <td>guc</td>
+      <td>us</td>
+      <td>Chile</td>
+    </tr>
+    <tr>
+      <th>usc000sv1u</th>
+      <td>2014-10-25 20:21:47+00:00</td>
+      <td>-33.2970</td>
+      <td>-69.7940</td>
+      <td>8.10</td>
+      <td>4.1</td>
+      <td>mb</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.07</td>
+      <td>...</td>
+      <td>75 km ENE of Villa Presidente Frei, Ñuñoa, San...</td>
+      <td>earthquake</td>
+      <td>3.8</td>
+      <td>4.3</td>
+      <td>0.261</td>
+      <td>5.0</td>
+      <td>reviewed</td>
+      <td>guc</td>
+      <td>us</td>
       <td>Chile</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 22 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1629,17 +1750,17 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -1656,13 +1777,27 @@ The point of this lesson is to make you feel confident in using <code class="doc
       <th>gap</th>
       <th>dmin</th>
       <th>rms</th>
-      <th>net</th>
+      <th>...</th>
       <th>updated</th>
       <th>place</th>
       <th>type</th>
+      <th>horizontalError</th>
+      <th>depthError</th>
+      <th>magError</th>
+      <th>magNst</th>
+      <th>status</th>
+      <th>locationSource</th>
+      <th>magSource</th>
     </tr>
     <tr>
       <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1681,92 +1816,128 @@ The point of this lesson is to make you feel confident in using <code class="doc
   </thead>
   <tbody>
     <tr>
-      <th></th>
-      <td>2014-12-31 14:49:19.200</td>
-      <td>-37.5219</td>
-      <td>78.9418</td>
-      <td>248.18</td>
-      <td>6.9</td>
-      <td>mww</td>
-      <td>NaN</td>
-      <td>195.0</td>
-      <td>28.762</td>
-      <td>1.47</td>
-      <td>us</td>
-      <td>2015-03-17T02:38:27.040Z</td>
-      <td>99km NW of Visokoi Island,</td>
-      <td>earthquake</td>
-    </tr>
-    <tr>
       <th>Afghanistan</th>
-      <td>2014-12-27 06:37:50.010</td>
-      <td>37.0112</td>
-      <td>71.6062</td>
+      <td>2014-10-28 18:52:11.630000+00:00</td>
+      <td>37.5010</td>
+      <td>72.3338</td>
       <td>248.39</td>
       <td>5.6</td>
       <td>mww</td>
       <td>NaN</td>
       <td>172.0</td>
       <td>3.505</td>
-      <td>1.55</td>
-      <td>us</td>
-      <td>2015-06-22T20:12:10.712Z</td>
-      <td>8km SE of Ashkasham, Afghanistan</td>
+      <td>1.49</td>
+      <td>...</td>
+      <td>2022-07-27T04:48:31.126Z</td>
+      <td>Hindu Kush region, Afghanistan</td>
       <td>earthquake</td>
+      <td>10.0</td>
+      <td>12.4</td>
+      <td>0.384</td>
+      <td>236.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
+    </tr>
+    <tr>
+      <th>Afghanistan-Tajikistan-Pakistan region</th>
+      <td>2014-04-21 04:49:51.300000+00:00</td>
+      <td>36.2863</td>
+      <td>71.3573</td>
+      <td>98.93</td>
+      <td>4.3</td>
+      <td>mb</td>
+      <td>NaN</td>
+      <td>72.0</td>
+      <td>2.570</td>
+      <td>1.37</td>
+      <td>...</td>
+      <td>2014-07-04T01:34:48.000Z</td>
+      <td>Afghanistan-Tajikistan-Pakistan region</td>
+      <td>earthquake</td>
+      <td>NaN</td>
+      <td>5.8</td>
+      <td>0.096</td>
+      <td>31.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
     </tr>
     <tr>
       <th>Alaska</th>
-      <td>2014-12-30 21:22:21.580</td>
-      <td>67.9858</td>
-      <td>179.9288</td>
-      <td>266.61</td>
+      <td>2014-10-30 22:08:40.190000+00:00</td>
+      <td>68.0197</td>
+      <td>179.4190</td>
+      <td>234.20</td>
       <td>7.9</td>
       <td>mww</td>
-      <td>152.0</td>
+      <td>NaN</td>
       <td>338.0</td>
-      <td>7.712</td>
-      <td>2.15</td>
-      <td>us</td>
-      <td>2015-05-30T05:34:08.822Z</td>
-      <td>9km WSW of Little Sitkin Island, Alaska</td>
+      <td>6.339</td>
+      <td>1.84</td>
+      <td>...</td>
+      <td>2024-01-17T21:08:44.760Z</td>
+      <td>Rat Islands, Aleutian Islands, Alaska</td>
       <td>earthquake</td>
+      <td>14.8</td>
+      <td>22.2</td>
+      <td>0.381</td>
+      <td>621.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
     </tr>
     <tr>
       <th>Albania</th>
-      <td>2014-05-20 04:43:25.500</td>
+      <td>2014-05-20 04:43:25.500000+00:00</td>
       <td>41.5297</td>
       <td>20.2804</td>
-      <td>28.26</td>
+      <td>21.00</td>
       <td>5.0</td>
       <td>mwr</td>
       <td>NaN</td>
-      <td>69.0</td>
+      <td>38.0</td>
       <td>1.299</td>
-      <td>1.34</td>
-      <td>us</td>
-      <td>2015-01-30T15:28:03.533Z</td>
-      <td>6km NE of Durres, Albania</td>
+      <td>1.23</td>
+      <td>...</td>
+      <td>2022-07-26T15:14:53.291Z</td>
+      <td>18 km WSW of Mamurras, Albania</td>
       <td>earthquake</td>
+      <td>NaN</td>
+      <td>7.4</td>
+      <td>0.265</td>
+      <td>285.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
     </tr>
     <tr>
       <th>Algeria</th>
-      <td>2014-12-26 17:55:18.140</td>
+      <td>2014-08-22 00:22:46.420000+00:00</td>
       <td>36.9391</td>
       <td>5.6063</td>
-      <td>21.40</td>
+      <td>15.60</td>
       <td>5.5</td>
       <td>mww</td>
       <td>NaN</td>
       <td>174.0</td>
       <td>3.250</td>
-      <td>1.45</td>
-      <td>us</td>
-      <td>2015-03-17T02:37:18.040Z</td>
-      <td>5km SSW of Bougara, Algeria</td>
+      <td>1.26</td>
+      <td>...</td>
+      <td>2022-08-07T00:52:43.784Z</td>
+      <td>24 km SSE of Mostaganem, Algeria</td>
       <td>earthquake</td>
+      <td>3.8</td>
+      <td>6.2</td>
+      <td>0.526</td>
+      <td>15.0</td>
+      <td>reviewed</td>
+      <td>us</td>
+      <td>us</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 21 columns</p>
 </div></div></div>
 </div>
 <p>By default, the operation is applied to every column. That’s usually not what we want. We can use both <code class="docutils literal notranslate"><span class="pre">.</span></code> or <code class="docutils literal notranslate"><span class="pre">[]</span></code> syntax to select a specific column to operate on. Then we get back a series.</p>
@@ -1778,11 +1949,11 @@ The point of this lesson is to make you feel confident in using <code class="doc
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
-               6.9
-Afghanistan    5.6
-Alaska         7.9
-Albania        5.0
-Algeria        5.5
+Afghanistan                               5.6
+Afghanistan-Tajikistan-Pakistan region    4.3
+Alaska                                    7.9
+Albania                                   5.0
+Algeria                                   5.5
 Name: mag, dtype: float64
 </pre></div>
 </div>
@@ -1796,16 +1967,16 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
-Chile                         8.2
-Alaska                        7.9
-Solomon Islands               7.6
-Papua New Guinea              7.5
-El Salvador                   7.3
-Mexico                        7.2
-Fiji                          7.1
-Indonesia                     7.1
-Southern East Pacific Rise    7.0
-                              6.9
+Chile                                    8.2
+Alaska                                   7.9
+Solomon Islands                          7.6
+Papua New Guinea                         7.5
+El Salvador                              7.3
+Mexico                                   7.2
+southern East Pacific Rise               7.0
+Federated States of Micronesia region    6.9
+Fiji region                              6.9
+Greece                                   6.9
 Name: mag, dtype: float64
 </pre></div>
 </div>
@@ -1820,16 +1991,16 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
-Chile                         8.2
-Alaska                        7.9
-Solomon Islands               7.6
-Papua New Guinea              7.5
-El Salvador                   7.3
-Mexico                        7.2
-Fiji                          7.1
-Indonesia                     7.1
-Southern East Pacific Rise    7.0
-                              6.9
+Chile                                    8.2
+Alaska                                   7.9
+Solomon Islands                          7.6
+Papua New Guinea                         7.5
+El Salvador                              7.3
+Mexico                                   7.2
+southern East Pacific Rise               7.0
+Federated States of Micronesia region    6.9
+Fiji region                              6.9
+Greece                                   6.9
 Name: mag, dtype: float64
 </pre></div>
 </div>
@@ -1843,16 +2014,16 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
-Mexico         4.01
-Oregon         4.02
-California     4.04
-               4.10
-Afghanistan    4.10
-Alaska         4.10
-Albania        4.10
-Algeria        4.10
-Angola         4.10
-Antarctica     4.10
+California             4.01
+MX                     4.01
+Afghanistan            4.10
+Alaska                 4.10
+Albania                4.10
+Algeria                4.10
+Antigua and Barbuda    4.10
+Argentina              4.10
+Australia              4.10
+Banda Sea              4.10
 Name: mag, dtype: float64
 </pre></div>
 </div>
@@ -1866,16 +2037,16 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
-South Napa Earthquake          6.020000
-Bouvet Island region           5.750000
-South Georgia Island region    5.450000
-Barbados                       5.400000
-New Mexico                     5.300000
-Easter Island region           5.162500
-Malawi                         5.100000
-Drake Passage                  5.033333
-North Korea                    5.000000
-Saint Lucia                    5.000000
+California Earthquake             6.020000
+Federated States of Micronesia    5.666667
+Arizona                           5.300000
+Easter Island region              5.162500
+southern Iran                     5.100000
+southern Peru                     5.100000
+North Korea                       5.000000
+South Georgia Island region       5.000000
+northern Alaska                   5.000000
+Bouvet Island region              4.985714
 Name: mag, dtype: float64
 </pre></div>
 </div>
@@ -1889,16 +2060,16 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
-Barbados                              1.555635
-Bouvet Island region                  1.484924
-Puerto Rico                           0.957601
-Off the coast of Ecuador              0.848528
-Palau region                          0.777817
-East of the South Sandwich Islands    0.606495
-Southern East Pacific Rise            0.604508
-South Indian Ocean                    0.602194
-Prince Edward Islands region          0.595259
-Panama                                0.591322
+northern Alaska                       1.131371
+Federated States of Micronesia        0.929157
+Bouvet Island region                  0.807111
+California                            0.750920
+South Indian Ocean                    0.708872
+Oman                                  0.707107
+southern East Pacific Rise            0.653818
+Brazil                                0.636396
+east of the South Sandwich Islands    0.624029
+Wallis and Futuna                     0.616727
 Name: mag, dtype: float64
 </pre></div>
 </div>
@@ -1913,25 +2084,25 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>amin</th>
-      <th>amax</th>
+      <th>min</th>
+      <th>max</th>
       <th>mean</th>
     </tr>
     <tr>
@@ -1943,34 +2114,34 @@ Name: mag, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th></th>
-      <td>4.1</td>
-      <td>6.9</td>
-      <td>4.582544</td>
-    </tr>
-    <tr>
       <th>Afghanistan</th>
       <td>4.1</td>
       <td>5.6</td>
-      <td>4.410656</td>
+      <td>4.387368</td>
+    </tr>
+    <tr>
+      <th>Afghanistan-Tajikistan-Pakistan region</th>
+      <td>4.3</td>
+      <td>4.3</td>
+      <td>4.300000</td>
     </tr>
     <tr>
       <th>Alaska</th>
       <td>4.1</td>
       <td>7.9</td>
-      <td>4.515025</td>
+      <td>4.544164</td>
     </tr>
     <tr>
       <th>Albania</th>
       <td>4.1</td>
       <td>5.0</td>
-      <td>4.391667</td>
+      <td>4.457143</td>
     </tr>
     <tr>
       <th>Algeria</th>
       <td>4.1</td>
       <td>5.5</td>
-      <td>4.583333</td>
+      <td>4.560000</td>
     </tr>
   </tbody>
 </table>
@@ -1983,7 +2154,7 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112a09e80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;country&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_34_1.png" src="../../_images/pandas_groupby_34_1.png" />
@@ -2007,11 +2178,11 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id
-usc000mqlp   -0.915774
-usc000mqln   -0.675696
-usc000mqls   -0.282385
-usc000mf1x   -0.684915
-usc000mqlm   -0.666807
+usc000swlj   -1.145807
+usc000sta3   -0.651461
+usc000st9z   -1.080123
+usc000st9w    0.559124
+usc000st92    1.012338
 Name: mag, dtype: float64
 </pre></div>
 </div>
@@ -2044,6 +2215,15 @@ Name: mag, dtype: float64
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dframes</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;LST_DATE&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;SUR_TEMP_DAILY_TYPE&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_62224/3171698157.py:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  names=headers, header=None, sep=&#39;\s+&#39;,
 </pre></div>
 </div>
 </div>
@@ -2056,17 +2236,17 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -2243,7 +2423,7 @@ Name: mag, dtype: float64
     </tr>
   </tbody>
 </table>
-<p>5 rows × 28 columns</p>
+<p>5 rows × 27 columns</p>
 </div></div></div>
 </div>
 <p>This timeseries has daily resolution, and the daily plots are somewhat noisy.</p>
@@ -2254,7 +2434,7 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112f05b00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_41_1.png" src="../../_images/pandas_groupby_41_1.png" />
@@ -2270,17 +2450,17 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -2337,31 +2517,31 @@ Name: mag, dtype: float64
   <tbody>
     <tr>
       <th>1</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
       <td>2.924731</td>
-      <td>-7.120430</td>
+      <td>-7.122581</td>
       <td>-2.100000</td>
       <td>-1.905376</td>
-      <td>2.480645</td>
-      <td>5.811613</td>
+      <td>2.478495</td>
+      <td>5.812258</td>
       <td>...</td>
-      <td>0.240292</td>
-      <td>0.199547</td>
-      <td>0.150376</td>
-      <td>0.162533</td>
-      <td>0.168817</td>
-      <td>0.232258</td>
+      <td>0.240250</td>
+      <td>0.200698</td>
+      <td>0.153645</td>
+      <td>0.160859</td>
+      <td>0.150538</td>
+      <td>0.248387</td>
       <td>0.788172</td>
-      <td>1.749462</td>
-      <td>3.394624</td>
+      <td>1.766667</td>
+      <td>3.364516</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.487882</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2369,23 +2549,23 @@ Name: mag, dtype: float64
       <td>-5.015294</td>
       <td>0.712941</td>
       <td>1.022353</td>
-      <td>4.080000</td>
-      <td>8.495176</td>
+      <td>4.077647</td>
+      <td>8.495882</td>
       <td>...</td>
-      <td>0.244286</td>
-      <td>0.203089</td>
-      <td>0.154306</td>
-      <td>0.165506</td>
-      <td>1.217647</td>
-      <td>1.183529</td>
-      <td>1.280000</td>
-      <td>1.602353</td>
-      <td>2.460000</td>
+      <td>0.247714</td>
+      <td>0.210044</td>
+      <td>0.159153</td>
+      <td>0.163889</td>
+      <td>1.216471</td>
+      <td>1.169412</td>
+      <td>1.278824</td>
+      <td>1.617647</td>
+      <td>2.442353</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2393,23 +2573,23 @@ Name: mag, dtype: float64
       <td>-3.035484</td>
       <td>2.455914</td>
       <td>2.643011</td>
-      <td>2.786022</td>
-      <td>13.210645</td>
+      <td>2.788172</td>
+      <td>13.211290</td>
       <td>...</td>
-      <td>0.224202</td>
-      <td>0.190742</td>
-      <td>0.153140</td>
-      <td>0.161763</td>
-      <td>3.469892</td>
-      <td>3.407527</td>
-      <td>3.379570</td>
-      <td>3.472043</td>
-      <td>3.792473</td>
+      <td>0.228612</td>
+      <td>0.203634</td>
+      <td>0.157796</td>
+      <td>0.160366</td>
+      <td>3.450538</td>
+      <td>3.400000</td>
+      <td>3.372043</td>
+      <td>3.480645</td>
+      <td>3.777419</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2417,23 +2597,23 @@ Name: mag, dtype: float64
       <td>1.816667</td>
       <td>8.302222</td>
       <td>8.574444</td>
-      <td>2.400000</td>
-      <td>15.295222</td>
+      <td>2.396667</td>
+      <td>15.295889</td>
       <td>...</td>
-      <td>0.208600</td>
-      <td>0.183911</td>
-      <td>0.150022</td>
-      <td>0.159989</td>
-      <td>9.402222</td>
-      <td>9.138889</td>
-      <td>8.438889</td>
-      <td>7.600000</td>
-      <td>6.633333</td>
+      <td>0.214067</td>
+      <td>0.195844</td>
+      <td>0.153878</td>
+      <td>0.158100</td>
+      <td>9.415556</td>
+      <td>9.117778</td>
+      <td>8.455556</td>
+      <td>7.618889</td>
+      <td>6.670000</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2441,23 +2621,23 @@ Name: mag, dtype: float64
       <td>8.460215</td>
       <td>14.850538</td>
       <td>15.121505</td>
-      <td>3.016129</td>
-      <td>17.287849</td>
+      <td>3.015054</td>
+      <td>17.288602</td>
       <td>...</td>
-      <td>0.198925</td>
-      <td>0.175452</td>
-      <td>0.146032</td>
-      <td>0.157710</td>
-      <td>16.889247</td>
-      <td>16.691398</td>
-      <td>15.569892</td>
-      <td>14.193548</td>
-      <td>12.344086</td>
+      <td>0.204796</td>
+      <td>0.187097</td>
+      <td>0.148871</td>
+      <td>0.155720</td>
+      <td>16.934409</td>
+      <td>16.640860</td>
+      <td>15.612903</td>
+      <td>14.208602</td>
+      <td>12.455914</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2466,22 +2646,22 @@ Name: mag, dtype: float64
       <td>18.733333</td>
       <td>19.026667</td>
       <td>3.053333</td>
-      <td>21.912111</td>
+      <td>21.913333</td>
       <td>...</td>
-      <td>0.132856</td>
-      <td>0.127044</td>
-      <td>0.128311</td>
-      <td>0.154978</td>
-      <td>22.372222</td>
-      <td>22.198889</td>
-      <td>20.916667</td>
-      <td>19.417778</td>
-      <td>17.452222</td>
+      <td>0.136911</td>
+      <td>0.135211</td>
+      <td>0.129422</td>
+      <td>0.152711</td>
+      <td>22.403333</td>
+      <td>22.126667</td>
+      <td>20.956667</td>
+      <td>19.448889</td>
+      <td>17.552222</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2489,23 +2669,23 @@ Name: mag, dtype: float64
       <td>15.536559</td>
       <td>22.054839</td>
       <td>22.012903</td>
-      <td>3.867742</td>
-      <td>21.569140</td>
+      <td>3.865591</td>
+      <td>21.570645</td>
       <td>...</td>
-      <td>0.100871</td>
-      <td>0.084957</td>
-      <td>0.112538</td>
-      <td>0.153278</td>
-      <td>25.453763</td>
-      <td>25.408602</td>
-      <td>24.141935</td>
-      <td>22.725806</td>
-      <td>20.994624</td>
+      <td>0.105806</td>
+      <td>0.095204</td>
+      <td>0.114419</td>
+      <td>0.150000</td>
+      <td>25.448387</td>
+      <td>25.318280</td>
+      <td>24.163441</td>
+      <td>22.746237</td>
+      <td>21.068817</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2513,23 +2693,23 @@ Name: mag, dtype: float64
       <td>15.351613</td>
       <td>21.410753</td>
       <td>21.378495</td>
-      <td>4.476344</td>
-      <td>18.492688</td>
+      <td>4.480645</td>
+      <td>18.493333</td>
       <td>...</td>
-      <td>0.150946</td>
-      <td>0.121290</td>
-      <td>0.125409</td>
-      <td>0.162650</td>
-      <td>24.784946</td>
-      <td>24.897849</td>
-      <td>24.117204</td>
-      <td>23.311828</td>
-      <td>22.278495</td>
+      <td>0.156161</td>
+      <td>0.132333</td>
+      <td>0.128796</td>
+      <td>0.158750</td>
+      <td>24.758065</td>
+      <td>24.829032</td>
+      <td>24.116129</td>
+      <td>23.325806</td>
+      <td>22.301075</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>64756</td>
+      <td>64756.0</td>
       <td>2.488667</td>
       <td>-73.74</td>
       <td>41.79</td>
@@ -2537,90 +2717,90 @@ Name: mag, dtype: float64
       <td>12.032222</td>
       <td>18.057778</td>
       <td>17.866667</td>
-      <td>3.728889</td>
-      <td>13.625000</td>
+      <td>3.730000</td>
+      <td>13.625667</td>
       <td>...</td>
-      <td>0.131144</td>
-      <td>0.113678</td>
-      <td>0.117722</td>
-      <td>0.156965</td>
-      <td>21.060000</td>
-      <td>21.218889</td>
-      <td>20.947778</td>
-      <td>20.823333</td>
-      <td>20.717778</td>
+      <td>0.136900</td>
+      <td>0.126422</td>
+      <td>0.121356</td>
+      <td>0.154000</td>
+      <td>21.028889</td>
+      <td>21.168889</td>
+      <td>20.921111</td>
+      <td>20.834444</td>
+      <td>20.707778</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>64756</td>
-      <td>2.533688</td>
+      <td>64756.0</td>
+      <td>2.548882</td>
       <td>-73.74</td>
       <td>41.79</td>
-      <td>19.548000</td>
-      <td>6.704000</td>
-      <td>13.124000</td>
-      <td>13.149333</td>
-      <td>3.408000</td>
-      <td>9.659733</td>
+      <td>18.127473</td>
+      <td>5.757143</td>
+      <td>11.938462</td>
+      <td>11.952747</td>
+      <td>3.228261</td>
+      <td>9.442527</td>
       <td>...</td>
-      <td>0.127653</td>
-      <td>0.087333</td>
-      <td>0.103053</td>
-      <td>0.141000</td>
-      <td>15.598667</td>
-      <td>15.749333</td>
-      <td>15.986667</td>
-      <td>16.608000</td>
-      <td>17.434667</td>
+      <td>0.155275</td>
+      <td>0.128462</td>
+      <td>0.120187</td>
+      <td>0.144588</td>
+      <td>14.872527</td>
+      <td>15.056044</td>
+      <td>15.379121</td>
+      <td>16.159341</td>
+      <td>17.059341</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>64756</td>
-      <td>2.522000</td>
+      <td>64756.0</td>
+      <td>2.555333</td>
       <td>-73.74</td>
       <td>41.79</td>
-      <td>10.986667</td>
-      <td>-1.536667</td>
-      <td>4.721667</td>
-      <td>4.858333</td>
-      <td>2.481667</td>
-      <td>6.991500</td>
+      <td>9.586667</td>
+      <td>-1.375556</td>
+      <td>4.097778</td>
+      <td>4.277778</td>
+      <td>3.991111</td>
+      <td>6.350111</td>
       <td>...</td>
-      <td>0.197867</td>
-      <td>0.159883</td>
-      <td>0.140783</td>
-      <td>0.150367</td>
-      <td>7.018333</td>
-      <td>7.100000</td>
-      <td>7.860000</td>
-      <td>9.181667</td>
-      <td>11.268333</td>
+      <td>0.226111</td>
+      <td>0.212200</td>
+      <td>0.164778</td>
+      <td>0.163078</td>
+      <td>6.777778</td>
+      <td>6.975556</td>
+      <td>7.658889</td>
+      <td>9.048889</td>
+      <td>10.864444</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>64756</td>
-      <td>2.522000</td>
+      <td>64756.0</td>
+      <td>2.555333</td>
       <td>-73.74</td>
       <td>41.79</td>
-      <td>2.845161</td>
-      <td>-6.472581</td>
-      <td>-1.819355</td>
-      <td>-1.677419</td>
-      <td>2.454839</td>
-      <td>4.752903</td>
+      <td>3.569892</td>
+      <td>-5.704301</td>
+      <td>-1.069892</td>
+      <td>-0.850538</td>
+      <td>2.791398</td>
+      <td>4.708602</td>
       <td>...</td>
-      <td>0.225093</td>
-      <td>0.186726</td>
-      <td>0.154403</td>
-      <td>0.171903</td>
-      <td>1.732258</td>
-      <td>1.845161</td>
-      <td>2.622581</td>
-      <td>3.914516</td>
-      <td>6.038710</td>
+      <td>0.259527</td>
+      <td>0.221280</td>
+      <td>0.171817</td>
+      <td>0.177172</td>
+      <td>1.831183</td>
+      <td>2.009677</td>
+      <td>2.647312</td>
+      <td>3.910753</td>
+      <td>5.710753</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -2641,17 +2821,17 @@ Name: mag, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -2711,7 +2891,7 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10f0577b8&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_46_1.png" src="../../_images/pandas_groupby_46_1.png" />
@@ -2728,7 +2908,7 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1129e5c88&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_48_1.png" src="../../_images/pandas_groupby_48_1.png" />
@@ -2748,14 +2928,10 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rpa/miniconda3/envs/geo_scipy/lib/python3.6/site-packages/pandas/core/ops.py:692: RuntimeWarning: invalid value encountered in double_scalars
-  lambda x: op(x, rvalues))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10ef63828&gt;
-</pre></div>
-</div>
-<img alt="../../_images/pandas_groupby_50_2.png" src="../../_images/pandas_groupby_50_2.png" />
+<img alt="../../_images/pandas_groupby_50_1.png" src="../../_images/pandas_groupby_50_1.png" />
 </div>
 </div>
 </section>
@@ -2770,7 +2946,7 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1126a5278&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_52_1.png" src="../../_images/pandas_groupby_52_1.png" />
@@ -2784,7 +2960,7 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10efc6160&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_54_1.png" src="../../_images/pandas_groupby_54_1.png" />
@@ -2802,7 +2978,7 @@ Name: mag, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112cd4b38&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LST_DATE&#39;&gt;
 </pre></div>
 </div>
 <img alt="../../_images/pandas_groupby_56_1.png" src="../../_images/pandas_groupby_56_1.png" />
@@ -2821,16 +2997,16 @@ Name: mag, dtype: float64
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "learning"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "learning",
             path: "./lectures/pandas"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'learning'</script>
 
               </div>
               

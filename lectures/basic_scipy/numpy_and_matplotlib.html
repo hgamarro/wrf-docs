@@ -264,23 +264,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray-part2.html">
+    <a class="reference internal" href="../xarray/part2_xarray.html">
      Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
     </a>
    </li>
   </ul>
@@ -705,7 +690,7 @@ title="Print to PDF"
 <p>This lecture will introduce NumPy and Matplotlib.
 These are two of the most fundamental parts of the scientific python “ecosystem”.
 Most everything else is built on top of them.</p>
-<img src="https://numpy.org/images/logos/numpy.svg" width="100px" />
+<img src="https://numpy.org/images/logo.svg" width="100px" />
 <p><strong>Numpy</strong>: <em>The fundamental package for scientific computing with Python</em></p>
 <ul class="simple">
 <li><p>Website: <a class="reference external" href="https://numpy.org/">https://numpy.org/</a></p></li>
@@ -737,17 +722,30 @@ Most everything else is built on top of them.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;In&#39;,
+ &#39;NamespaceMagics&#39;,
  &#39;Out&#39;,
  &#39;_&#39;,
  &#39;__&#39;,
+ &#39;__K&#39;,
  &#39;___&#39;,
  &#39;__builtin__&#39;,
  &#39;__builtins__&#39;,
  &#39;__doc__&#39;,
+ &#39;__import__&#39;,
+ &#39;__ipywidgets&#39;,
  &#39;__loader__&#39;,
  &#39;__name__&#39;,
+ &#39;__np&#39;,
  &#39;__package__&#39;,
+ &#39;__pd&#39;,
+ &#39;__pyspark&#39;,
+ &#39;__session__&#39;,
  &#39;__spec__&#39;,
+ &#39;__tf&#39;,
+ &#39;__torch&#39;,
+ &#39;__xr&#39;,
+ &#39;_attempt_import&#39;,
+ &#39;_check_imported&#39;,
  &#39;_dh&#39;,
  &#39;_i&#39;,
  &#39;_i1&#39;,
@@ -755,11 +753,26 @@ Most everything else is built on top of them.</p>
  &#39;_ih&#39;,
  &#39;_ii&#39;,
  &#39;_iii&#39;,
+ &#39;_jupyterlab_variableinspector_Jupyter&#39;,
+ &#39;_jupyterlab_variableinspector_default&#39;,
+ &#39;_jupyterlab_variableinspector_deletevariable&#39;,
+ &#39;_jupyterlab_variableinspector_dict_list&#39;,
+ &#39;_jupyterlab_variableinspector_displaywidget&#39;,
+ &#39;_jupyterlab_variableinspector_getcontentof&#39;,
+ &#39;_jupyterlab_variableinspector_getmatrixcontent&#39;,
+ &#39;_jupyterlab_variableinspector_getshapeof&#39;,
+ &#39;_jupyterlab_variableinspector_getsizeof&#39;,
+ &#39;_jupyterlab_variableinspector_is_matrix&#39;,
+ &#39;_jupyterlab_variableinspector_is_widget&#39;,
+ &#39;_jupyterlab_variableinspector_nms&#39;,
  &#39;_oh&#39;,
  &#39;exit&#39;,
  &#39;get_ipython&#39;,
+ &#39;json&#39;,
  &#39;np&#39;,
- &#39;quit&#39;]
+ &#39;open&#39;,
+ &#39;quit&#39;,
+ &#39;sys&#39;]
 </pre></div>
 </div>
 </div>
@@ -773,13 +786,9 @@ Most everything else is built on top of them.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ALLOW_THREADS&#39;,
- &#39;AxisError&#39;,
  &#39;BUFSIZE&#39;,
- &#39;Bytes0&#39;,
  &#39;CLIP&#39;,
- &#39;ComplexWarning&#39;,
  &#39;DataSource&#39;,
- &#39;Datetime64&#39;,
  &#39;ERR_CALL&#39;,
  &#39;ERR_DEFAULT&#39;,
  &#39;ERR_IGNORE&#39;,
@@ -798,8 +807,6 @@ Most everything else is built on top of them.</p>
  &#39;MAXDIMS&#39;,
  &#39;MAY_SHARE_BOUNDS&#39;,
  &#39;MAY_SHARE_EXACT&#39;,
- &#39;MachAr&#39;,
- &#39;ModuleDeprecationWarning&#39;,
  &#39;NAN&#39;,
  &#39;NINF&#39;,
  &#39;NZERO&#39;,
@@ -813,15 +820,11 @@ Most everything else is built on top of them.</p>
  &#39;SHIFT_OVERFLOW&#39;,
  &#39;SHIFT_UNDERFLOW&#39;,
  &#39;ScalarType&#39;,
- &#39;Str0&#39;,
- &#39;Tester&#39;,
- &#39;TooHardError&#39;,
  &#39;True_&#39;,
  &#39;UFUNC_BUFSIZE_DEFAULT&#39;,
  &#39;UFUNC_PYVALS_NAME&#39;,
- &#39;Uint64&#39;,
- &#39;VisibleDeprecationWarning&#39;,
  &#39;WRAP&#39;,
+ &#39;_CopyMode&#39;,
  &#39;_NoValue&#39;,
  &#39;_UFUNC_API&#39;,
  &#39;__NUMPY_SETUP__&#39;,
@@ -834,8 +837,9 @@ Most everything else is built on top of them.</p>
  &#39;__doc__&#39;,
  &#39;__expired_functions__&#39;,
  &#39;__file__&#39;,
+ &#39;__former_attrs__&#39;,
+ &#39;__future_scalars__&#39;,
  &#39;__getattr__&#39;,
- &#39;__git_version__&#39;,
  &#39;__loader__&#39;,
  &#39;__name__&#39;,
  &#39;__package__&#39;,
@@ -843,19 +847,27 @@ Most everything else is built on top of them.</p>
  &#39;__spec__&#39;,
  &#39;__version__&#39;,
  &#39;_add_newdoc_ufunc&#39;,
+ &#39;_builtins&#39;,
  &#39;_distributor_init&#39;,
  &#39;_financial_names&#39;,
+ &#39;_get_promotion_state&#39;,
  &#39;_globals&#39;,
+ &#39;_int_extended_msg&#39;,
  &#39;_mat&#39;,
+ &#39;_no_nep50_warning&#39;,
+ &#39;_pyinstaller_hooks_dir&#39;,
  &#39;_pytesttester&#39;,
- &#39;_version&#39;,
+ &#39;_set_promotion_state&#39;,
+ &#39;_specific_msg&#39;,
+ &#39;_typing&#39;,
+ &#39;_using_numpy2_behavior&#39;,
+ &#39;_utils&#39;,
  &#39;abs&#39;,
  &#39;absolute&#39;,
  &#39;add&#39;,
  &#39;add_docstring&#39;,
  &#39;add_newdoc&#39;,
  &#39;add_newdoc_ufunc&#39;,
- &#39;alen&#39;,
  &#39;all&#39;,
  &#39;allclose&#39;,
  &#39;alltrue&#39;,
@@ -894,7 +906,6 @@ Most everything else is built on top of them.</p>
  &#39;asfarray&#39;,
  &#39;asfortranarray&#39;,
  &#39;asmatrix&#39;,
- &#39;asscalar&#39;,
  &#39;atleast_1d&#39;,
  &#39;atleast_2d&#39;,
  &#39;atleast_3d&#39;,
@@ -910,7 +921,6 @@ Most everything else is built on top of them.</p>
  &#39;blackman&#39;,
  &#39;block&#39;,
  &#39;bmat&#39;,
- &#39;bool8&#39;,
  &#39;bool_&#39;,
  &#39;broadcast&#39;,
  &#39;broadcast_arrays&#39;,
@@ -921,7 +931,6 @@ Most everything else is built on top of them.</p>
  &#39;busdaycalendar&#39;,
  &#39;byte&#39;,
  &#39;byte_bounds&#39;,
- &#39;bytes0&#39;,
  &#39;bytes_&#39;,
  &#39;c_&#39;,
  &#39;can_cast&#39;,
@@ -954,7 +963,6 @@ Most everything else is built on top of them.</p>
  &#39;copy&#39;,
  &#39;copysign&#39;,
  &#39;copyto&#39;,
- &#39;core&#39;,
  &#39;corrcoef&#39;,
  &#39;correlate&#39;,
  &#39;cos&#39;,
@@ -990,6 +998,7 @@ Most everything else is built on top of them.</p>
  &#39;dsplit&#39;,
  &#39;dstack&#39;,
  &#39;dtype&#39;,
+ &#39;dtypes&#39;,
  &#39;e&#39;,
  &#39;ediff1d&#39;,
  &#39;einsum&#39;,
@@ -1000,6 +1009,7 @@ Most everything else is built on top of them.</p>
  &#39;equal&#39;,
  &#39;errstate&#39;,
  &#39;euler_gamma&#39;,
+ &#39;exceptions&#39;,
  &#39;exp&#39;,
  &#39;exp2&#39;,
  &#39;expand_dims&#39;,
@@ -1035,6 +1045,7 @@ Most everything else is built on top of them.</p>
  &#39;format_float_scientific&#39;,
  &#39;format_parser&#39;,
  &#39;frexp&#39;,
+ &#39;from_dlpack&#39;,
  &#39;frombuffer&#39;,
  &#39;fromfile&#39;,
  &#39;fromfunction&#39;,
@@ -1082,7 +1093,6 @@ Most everything else is built on top of them.</p>
  &#39;infty&#39;,
  &#39;inner&#39;,
  &#39;insert&#39;,
- &#39;int0&#39;,
  &#39;int16&#39;,
  &#39;int32&#39;,
  &#39;int64&#39;,
@@ -1129,7 +1139,6 @@ Most everything else is built on top of them.</p>
  &#39;linspace&#39;,
  &#39;little_endian&#39;,
  &#39;load&#39;,
- &#39;loads&#39;,
  &#39;loadtxt&#39;,
  &#39;log&#39;,
  &#39;log10&#39;,
@@ -1148,13 +1157,10 @@ Most everything else is built on top of them.</p>
  &#39;longlong&#39;,
  &#39;lookfor&#39;,
  &#39;ma&#39;,
- &#39;mafromtxt&#39;,
  &#39;mask_indices&#39;,
  &#39;mat&#39;,
- &#39;math&#39;,
  &#39;matmul&#39;,
  &#39;matrix&#39;,
- &#39;matrixlib&#39;,
  &#39;max&#39;,
  &#39;maximum&#39;,
  &#39;maximum_sctype&#39;,
@@ -1192,7 +1198,6 @@ Most everything else is built on top of them.</p>
  &#39;nbytes&#39;,
  &#39;ndarray&#39;,
  &#39;ndenumerate&#39;,
- &#39;ndfromtxt&#39;,
  &#39;ndim&#39;,
  &#39;ndindex&#39;,
  &#39;nditer&#39;,
@@ -1205,13 +1210,11 @@ Most everything else is built on top of them.</p>
  &#39;numarray&#39;,
  &#39;number&#39;,
  &#39;obj2sctype&#39;,
- &#39;object0&#39;,
  &#39;object_&#39;,
  &#39;ogrid&#39;,
  &#39;oldnumeric&#39;,
  &#39;ones&#39;,
  &#39;ones_like&#39;,
- &#39;os&#39;,
  &#39;outer&#39;,
  &#39;packbits&#39;,
  &#39;pad&#39;,
@@ -1295,6 +1298,7 @@ Most everything else is built on top of them.</p>
  &#39;shares_memory&#39;,
  &#39;short&#39;,
  &#39;show_config&#39;,
+ &#39;show_runtime&#39;,
  &#39;sign&#39;,
  &#39;signbit&#39;,
  &#39;signedinteger&#39;,
@@ -1315,13 +1319,11 @@ Most everything else is built on top of them.</p>
  &#39;squeeze&#39;,
  &#39;stack&#39;,
  &#39;std&#39;,
- &#39;str0&#39;,
  &#39;str_&#39;,
  &#39;string_&#39;,
  &#39;subtract&#39;,
  &#39;sum&#39;,
  &#39;swapaxes&#39;,
- &#39;sys&#39;,
  &#39;take&#39;,
  &#39;take_along_axis&#39;,
  &#39;tan&#39;,
@@ -1350,7 +1352,6 @@ Most everything else is built on top of them.</p>
  &#39;ubyte&#39;,
  &#39;ufunc&#39;,
  &#39;uint&#39;,
- &#39;uint0&#39;,
  &#39;uint16&#39;,
  &#39;uint32&#39;,
  &#39;uint64&#39;,
@@ -1365,7 +1366,6 @@ Most everything else is built on top of them.</p>
  &#39;unravel_index&#39;,
  &#39;unsignedinteger&#39;,
  &#39;unwrap&#39;,
- &#39;use_hugepage&#39;,
  &#39;ushort&#39;,
  &#39;vander&#39;,
  &#39;var&#39;,
@@ -1373,10 +1373,8 @@ Most everything else is built on top of them.</p>
  &#39;vectorize&#39;,
  &#39;version&#39;,
  &#39;void&#39;,
- &#39;void0&#39;,
  &#39;vsplit&#39;,
  &#39;vstack&#39;,
- &#39;warnings&#39;,
  &#39;where&#39;,
  &#39;who&#39;,
  &#39;zeros&#39;,
@@ -1393,7 +1391,7 @@ Most everything else is built on top of them.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.21.1&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.26.4&#39;
 </pre></div>
 </div>
 </div>
@@ -1670,7 +1668,7 @@ Much more depth will be provided in the next chapter.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7efecaf6f3a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14e1a31f46d0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_35_1.png" src="../../_images/numpy_and_matplotlib_35_1.png" />
@@ -1685,7 +1683,7 @@ He we use <code class="docutils literal notranslate"><span class="pre">pcolormes
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efecae663a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x14e1a3ad9650&gt;
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_37_1.png" src="../../_images/numpy_and_matplotlib_37_1.png" />
@@ -1698,7 +1696,7 @@ He we use <code class="docutils literal notranslate"><span class="pre">pcolormes
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efecadce9a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x14e1a2f50d10&gt;
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_38_1.png" src="../../_images/numpy_and_matplotlib_38_1.png" />
@@ -1724,7 +1722,7 @@ He we use <code class="docutils literal notranslate"><span class="pre">pcolormes
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efecada8df0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x14e1a2fc0d10&gt;
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_41_1.png" src="../../_images/numpy_and_matplotlib_41_1.png" />
@@ -1743,7 +1741,7 @@ He we use <code class="docutils literal notranslate"><span class="pre">pcolormes
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efecad14130&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x14e1a2650d10&gt;
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_44_1.png" src="../../_images/numpy_and_matplotlib_44_1.png" />
@@ -1759,24 +1757,31 @@ He we use <code class="docutils literal notranslate"><span class="pre">pcolormes
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_442</span><span class="o">/</span><span class="mf">3844134479.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
 
-<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">reshape</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">File /global/software/rocky-8.x86_64/manual/modules/langs/anaconda3/2024.02-1/lib/python3.11/site-packages/numpy/core/fromnumeric.py:285,</span> in <span class="ni">reshape</span><span class="nt">(a, newshape, order)</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_reshape_dispatcher</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span> <span class="k">def</span><span class="w"> </span><span class="nf">reshape</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">newshape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span><span class="sd">     Gives a new shape to an array without changing its data.</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span><span class="sd">            [5, 6]])</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">285</span>     <span class="k">return</span> <span class="n">_wrapfunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;reshape&#39;</span><span class="p">,</span> <span class="n">newshape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
 
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/numpy/core/fromnumeric.py</span> in <span class="ni">reshape</span><span class="nt">(a, newshape, order)</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span>            <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">298</span><span class="s2">     return _wrapfunc(a, &#39;reshape&#39;, newshape, order=order)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span><span class="s2"> </span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/numpy/core/fromnumeric.py</span> in <span class="ni">_wrapfunc</span><span class="nt">(obj, method, *args, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span><span class="s2">     try:</span>
-<span class="ne">---&gt; </span><span class="mi">57</span><span class="s2">         return bound(*args, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="s2">     except TypeError:</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="s2">         # A TypeError occurs if the object does have such a method in its</span>
+<span class="nn">File /global/software/rocky-8.x86_64/manual/modules/langs/anaconda3/2024.02-1/lib/python3.11/site-packages/numpy/core/fromnumeric.py:59,</span> in <span class="ni">_wrapfunc</span><span class="nt">(obj, method, *args, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="k">return</span> <span class="n">_wrapit</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="k">return</span> <span class="n">bound</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="c1"># A TypeError occurs if the object does have such a method in its</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="c1"># class, but its signature is not identical to that of NumPy&#39;s. This</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="c1"># Call _wrapit from within the except clause to ensure a potential</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="c1"># exception has a traceback chain.</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="k">return</span> <span class="n">_wrapit</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: cannot reshape array of size 5000 into shape (8,9)
 </pre></div>
@@ -1793,7 +1798,7 @@ You can accidentally lose the structure of the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efecac11c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x14e1a2697090&gt;
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_48_1.png" src="../../_images/numpy_and_matplotlib_48_1.png" />
@@ -1808,7 +1813,7 @@ You can accidentally lose the structure of the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efecab78250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x14e0e123c7d0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_50_1.png" src="../../_images/numpy_and_matplotlib_50_1.png" />
@@ -1895,7 +1900,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efecabed310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x14e0e0cfef90&gt;
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_59_1.png" src="../../_images/numpy_and_matplotlib_59_1.png" />
@@ -1916,7 +1921,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_442</span><span class="o">/</span><span class="mf">1156475932.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># multiply f by y</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">h</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">y</span>
@@ -1950,7 +1955,7 @@ Then the length-50 dimensions will line up.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efecaabaee0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x14e0e0dc90d0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_64_1.png" src="../../_images/numpy_and_matplotlib_64_1.png" />
@@ -2018,7 +2023,7 @@ There are many different reduction operations. Here we will look at some of the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7efecaa9b790&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14e0e0c0ef50&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_71_1.png" src="../../_images/numpy_and_matplotlib_71_1.png" />
@@ -2031,7 +2036,7 @@ There are many different reduction operations. Here we will look at some of the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7efecaa00610&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14e0e0ae6f50&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/numpy_and_matplotlib_72_1.png" src="../../_images/numpy_and_matplotlib_72_1.png" />

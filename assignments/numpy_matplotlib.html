@@ -266,23 +266,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/xarray/xarray-part2.html">
+    <a class="reference internal" href="../lectures/xarray/part2_xarray.html">
      Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/xarray/xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
     </a>
    </li>
   </ul>
@@ -1004,10 +989,7 @@ ARGO floats are autonomous robotic instruments that collect Temperature, Salinit
 The following code will give you a list of <code class="docutils literal notranslate"><span class="pre">.npy</span></code> files that you can open in the next step.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pooch</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.ldeo.columbia.edu/~rpa/float_data_4901412.zip&quot;</span>
-<span class="n">files</span> <span class="o">=</span> <span class="n">pooch</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">processor</span><span class="o">=</span><span class="n">pooch</span><span class="o">.</span><span class="n">Unzip</span><span class="p">(),</span> <span class="n">known_hash</span><span class="o">=</span><span class="s2">&quot;2a703c720302c682f1662181d329c9f22f9f10e1539dc2d6082160a469165009&quot;</span><span class="p">)</span>
-<span class="n">files</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;../lectures/xarray/data/float_4901412_prof.nc&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1022,7 +1004,19 @@ The following code will give you a list of <code class="docutils literal notrans
 <p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: latitude</p>
 <p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: longitude</p>
 <p><code class="docutils literal notranslate"><span class="pre">level</span></code>: depth level</p>
-<p><strong>Note</strong>: you have to actually look at the file name (the items in <code class="docutils literal notranslate"><span class="pre">files</span></code>) to know which files corresponds to which variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;PSAL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>             <span class="c1"># shape (N_PROF, N_LEVELS)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;TEMP&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>             <span class="c1"># shape (N_PROF, N_LEVELS)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;PRES&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>             <span class="c1"># shape (N_PROF, N_LEVELS)</span>
+<span class="n">lat</span>    <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;LATITUDE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>     <span class="c1"># Latitude [°]</span>
+<span class="n">lon</span>    <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;LONGITUDE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>    <span class="c1"># Longitude [°]</span>
+<span class="n">levels</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;N_LEVELS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>    <span class="c1"># length N_LEVELS</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;TIME&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>          <span class="c1"># length N_PROF</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="examine-the-shapes-of-t-s-and-p-compared-to-lon-lat-date-and-level-how-do-you-think-they-are-related">
 <h3>2.2 Examine the shapes of T, S and P compared to <code class="docutils literal notranslate"><span class="pre">lon</span></code>, <code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">level</span></code>. How do you think they are related?<a class="headerlink" href="#examine-the-shapes-of-t-s-and-p-compared-to-lon-lat-date-and-level-how-do-you-think-they-are-related" title="Permalink to this headline">#</a></h3>

@@ -266,23 +266,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/basic_xarray.html">
-     Assignment: Xarray Fundamentals with Atmospheric Radiation Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray-part2.html">
+    <a class="reference internal" href="../xarray/part2_xarray.html">
      Xarray Interpolation, Groupby, Resample, Rolling, and Coarsen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/more_xarray.html">
-     Assignment: More Xarray with El Niño-Southern Oscillation (ENSO) Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xarray/xarray_tips_and_tricks.html">
-     Xarray Tips and Tricks
     </a>
    </li>
   </ul>
@@ -559,189 +544,198 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-are-data">
-   What is (are) data?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   All About Data
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-encoding">
-     Data Encoding
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-are-data">
+     What is (are) data?
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data">
-       Numerical Data
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-encoding">
+       Data Encoding
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#numerical-data">
+         Numerical Data
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#text-data">
+         Text Data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tabular-data">
+       Tabular Data
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#text-data">
-       Text Data
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#array-data">
+       Array Data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gis-data">
+       “GIS” Data
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#raster-data">
+         Raster Data
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#vector-data">
+         Vector Data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#graph-data">
+       Graph Data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unstructured-data">
+       Unstructured Data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#metadata">
+       Metadata
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data">
-     Tabular Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array-data">
-     Array Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gis-data">
-     “GIS” Data
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-programs-access-data">
+     How do programs access data?
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#raster-data">
-       Raster Data
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reproducibility-and-manual-download-steps">
+       Reproducibility and Manual Download Steps
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#vector-data">
-       Vector Data
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loading-data-directly-over-the-network">
+       Loading Data Directly Over the Network
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#http-streams">
+         HTTP streams
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#opendap">
+         OPeNDAP
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graph-data">
-     Graph Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unstructured-data">
-     Unstructured Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metadata">
-     Metadata
-    </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-programs-access-data">
-   How do programs access data?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-information">
+   ~~~~~~~~~~~~EXTRA Information~~~~~~~~~~~~~~~~
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reproducibility-and-manual-download-steps">
-     Reproducibility and Manual Download Steps
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filesystem-spec-fsspec">
+     Filesystem-Spec (fsspec)
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-data-directly-over-the-network">
-     Loading Data Directly Over the Network
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#http-streams">
-       HTTP streams
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#opendap">
-       OPeNDAP
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filesystem-spec-fsspec">
-       Filesystem-Spec (fsspec)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cloud-object-storage">
-     Cloud Object Storage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#local-files">
      Local Files
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#best-practices-for-data-sharing-fair">
-   Best practices for data sharing: FAIR
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-findable">
-     To be Findable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-accessible">
-     To be Accessible:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-interoperable">
-     To be Interoperable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-re-useable">
-     To be Re-useable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#persistent-identifiers-pi-pid">
-     Persistent Identifiers (PI / PID)
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#best-practices-for-data-sharing-fair">
+     Best practices for data sharing: FAIR
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#digital-object-identifiers">
-       Digital Object Identifiers
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-be-findable">
+       To be Findable:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-be-accessible">
+       To be Accessible:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-be-interoperable">
+       To be Interoperable:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-be-re-useable">
+       To be Re-useable:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#persistent-identifiers-pi-pid">
+       Persistent Identifiers (PI / PID)
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#digital-object-identifiers">
+         Digital Object Identifiers
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-can-you-can-create-fair-data-and-code">
+       How can YOU can create FAIR data and code?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-not-to-do">
+       What not to do
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rough-guide-to-fairly-sharing-data">
+       Rough guide to FAIRly sharing data
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-1-quality-control-the-data-and-metadata">
+         Step 1: Quality control the data and metadata
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-2-upload-the-data-to-zenodo">
+         Step 2: Upload the data to Zenodo
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-3-verify-you-can-access-the-data">
+         Step 3: Verify you can access the data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sharing-code">
+       Sharing Code
       </a>
      </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-can-you-can-create-fair-data-and-code">
-     How can YOU can create FAIR data and code?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-not-to-do">
-     What not to do
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rough-guide-to-fairly-sharing-data">
-     Rough guide to FAIRly sharing data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-1-quality-control-the-data-and-metadata">
-       Step 1: Quality control the data and metadata
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-2-upload-the-data-to-zenodo">
-       Step 2: Upload the data to Zenodo
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-3-verify-you-can-access-the-data">
-       Step 3: Verify you can access the data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sharing-code">
-     Sharing Code
-    </a>
    </li>
   </ul>
  </li>
@@ -764,189 +758,198 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-are-data">
-   What is (are) data?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   All About Data
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-encoding">
-     Data Encoding
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-are-data">
+     What is (are) data?
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data">
-       Numerical Data
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-encoding">
+       Data Encoding
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#numerical-data">
+         Numerical Data
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#text-data">
+         Text Data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tabular-data">
+       Tabular Data
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#text-data">
-       Text Data
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#array-data">
+       Array Data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gis-data">
+       “GIS” Data
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#raster-data">
+         Raster Data
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#vector-data">
+         Vector Data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#graph-data">
+       Graph Data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unstructured-data">
+       Unstructured Data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#metadata">
+       Metadata
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabular-data">
-     Tabular Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array-data">
-     Array Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gis-data">
-     “GIS” Data
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-programs-access-data">
+     How do programs access data?
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#raster-data">
-       Raster Data
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reproducibility-and-manual-download-steps">
+       Reproducibility and Manual Download Steps
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#vector-data">
-       Vector Data
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loading-data-directly-over-the-network">
+       Loading Data Directly Over the Network
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#http-streams">
+         HTTP streams
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#opendap">
+         OPeNDAP
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graph-data">
-     Graph Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unstructured-data">
-     Unstructured Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metadata">
-     Metadata
-    </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-programs-access-data">
-   How do programs access data?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-information">
+   ~~~~~~~~~~~~EXTRA Information~~~~~~~~~~~~~~~~
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reproducibility-and-manual-download-steps">
-     Reproducibility and Manual Download Steps
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filesystem-spec-fsspec">
+     Filesystem-Spec (fsspec)
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#loading-data-directly-over-the-network">
-     Loading Data Directly Over the Network
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#http-streams">
-       HTTP streams
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#opendap">
-       OPeNDAP
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filesystem-spec-fsspec">
-       Filesystem-Spec (fsspec)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cloud-object-storage">
-     Cloud Object Storage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#local-files">
      Local Files
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#best-practices-for-data-sharing-fair">
-   Best practices for data sharing: FAIR
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-findable">
-     To be Findable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-accessible">
-     To be Accessible:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-interoperable">
-     To be Interoperable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-be-re-useable">
-     To be Re-useable:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#persistent-identifiers-pi-pid">
-     Persistent Identifiers (PI / PID)
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#best-practices-for-data-sharing-fair">
+     Best practices for data sharing: FAIR
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#digital-object-identifiers">
-       Digital Object Identifiers
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-be-findable">
+       To be Findable:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-be-accessible">
+       To be Accessible:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-be-interoperable">
+       To be Interoperable:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-be-re-useable">
+       To be Re-useable:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#persistent-identifiers-pi-pid">
+       Persistent Identifiers (PI / PID)
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#digital-object-identifiers">
+         Digital Object Identifiers
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-can-you-can-create-fair-data-and-code">
+       How can YOU can create FAIR data and code?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-not-to-do">
+       What not to do
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rough-guide-to-fairly-sharing-data">
+       Rough guide to FAIRly sharing data
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-1-quality-control-the-data-and-metadata">
+         Step 1: Quality control the data and metadata
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-2-upload-the-data-to-zenodo">
+         Step 2: Upload the data to Zenodo
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#step-3-verify-you-can-access-the-data">
+         Step 3: Verify you can access the data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sharing-code">
+       Sharing Code
       </a>
      </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-can-you-can-create-fair-data-and-code">
-     How can YOU can create FAIR data and code?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-not-to-do">
-     What not to do
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rough-guide-to-fairly-sharing-data">
-     Rough guide to FAIRly sharing data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-1-quality-control-the-data-and-metadata">
-       Step 1: Quality control the data and metadata
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-2-upload-the-data-to-zenodo">
-       Step 2: Upload the data to Zenodo
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-3-verify-you-can-access-the-data">
-       Step 3: Verify you can access the data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sharing-code">
-     Sharing Code
-    </a>
    </li>
   </ul>
  </li>
@@ -1186,24 +1189,15 @@ HTTP connections are typically established via URLs - Universal Resource Locator
 <p>When you point your web browser to this URL, it downloads the data (in this case, unicode text files structured as HTML) to your computer for viewing.
 A key point is that <strong>URLs are the same from every computer</strong>.</p>
 <p>Data analysis applications can also get data over HTTP. For example, Pandas can directly open files from <code class="docutils literal notranslate"><span class="pre">http[s]://</span></code> URLs.
-If you can find such a link to your dataset, you can pass it directly to Pandas.
-However, sometimes it takes some sleuthing to find the right link.</p>
-<p>As an example, let’s consider the <a class="reference external" href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh">NASA Meteorite Landings Database</a>.</p>
-<p>When we go to this site we see something like this:</p>
-<p><img alt="meteorite page" src="lectures/environment/figures/meteorite_page.png" /></p>
-<p>Clicking the “export” button gives us an option to export CSV, which we know pandas can read.
-If we just click the “CSV” button, we download the file to our computer (not what we want).
-Instead, <em>right click or CTRL-click the download link</em> and select “Copy Link Address”.</p>
-<img src="figures/meteorite_export.png" width="500px" />
-<p>Pasting the results into our code editor gives us the desired URL.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD&quot;
+If you can find such a link to your dataset, you can pass it directly to Pandas.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mwaskom</span><span class="o">/</span><span class="n">seaborn</span><span class="o">-</span><span class="n">data</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">iris</span><span class="o">.</span><span class="n">csv</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>We can feed this directly to Pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -1228,83 +1222,53 @@ Instead, <em>right click or CTRL-click the download link</em> and select “Copy
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>name</th>
-      <th>id</th>
-      <th>nametype</th>
-      <th>recclass</th>
-      <th>mass (g)</th>
-      <th>fall</th>
-      <th>year</th>
-      <th>reclat</th>
-      <th>reclong</th>
-      <th>GeoLocation</th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Aachen</td>
-      <td>1</td>
-      <td>Valid</td>
-      <td>L5</td>
-      <td>21.0</td>
-      <td>Fell</td>
-      <td>01/01/1880 12:00:00 AM</td>
-      <td>50.77500</td>
-      <td>6.08333</td>
-      <td>(50.775, 6.08333)</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Aarhus</td>
-      <td>2</td>
-      <td>Valid</td>
-      <td>H6</td>
-      <td>720.0</td>
-      <td>Fell</td>
-      <td>01/01/1951 12:00:00 AM</td>
-      <td>56.18333</td>
-      <td>10.23333</td>
-      <td>(56.18333, 10.23333)</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Abee</td>
-      <td>6</td>
-      <td>Valid</td>
-      <td>EH4</td>
-      <td>107000.0</td>
-      <td>Fell</td>
-      <td>01/01/1952 12:00:00 AM</td>
-      <td>54.21667</td>
-      <td>-113.00000</td>
-      <td>(54.21667, -113.0)</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Acapulco</td>
-      <td>10</td>
-      <td>Valid</td>
-      <td>Acapulcoite</td>
-      <td>1914.0</td>
-      <td>Fell</td>
-      <td>01/01/1976 12:00:00 AM</td>
-      <td>16.88333</td>
-      <td>-99.90000</td>
-      <td>(16.88333, -99.9)</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Achiras</td>
-      <td>370</td>
-      <td>Valid</td>
-      <td>L6</td>
-      <td>780.0</td>
-      <td>Fell</td>
-      <td>01/01/1902 12:00:00 AM</td>
-      <td>-33.16667</td>
-      <td>-64.95000</td>
-      <td>(-33.16667, -64.95)</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
     </tr>
   </tbody>
 </table>
@@ -1360,12 +1324,14 @@ NetCDF and Xarray can open OPeNDAP links directly.</p>
   --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
 }
 
-html[theme=dark],
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
   --xr-font-color3: rgba(255, 255, 255, 0.38);
-  --xr-border-color: #1F1F1F;
+  --xr-border-color: #1f1f1f;
   --xr-disabled-color: #515151;
   --xr-background-color: #111111;
   --xr-background-color-row-even: #111111;
@@ -1373,7 +1339,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1410,7 +1376,7 @@ body.vscode-dark {
 .xr-sections {
   padding-left: 0 !important;
   display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
 }
 
 .xr-section-item {
@@ -1418,7 +1384,9 @@ body.vscode-dark {
 }
 
 .xr-section-item input {
-  display: none;
+  display: inline-block;
+  opacity: 0;
+  height: 0;
 }
 
 .xr-section-item input + label {
@@ -1428,6 +1396,10 @@ body.vscode-dark {
 .xr-section-item input:enabled + label {
   cursor: pointer;
   color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
 }
 
 .xr-section-item input:enabled + label:hover {
@@ -1451,7 +1423,7 @@ body.vscode-dark {
 
 .xr-section-summary-in + label:before {
   display: inline-block;
-  content: '►';
+  content: "►";
   font-size: 11px;
   width: 15px;
   text-align: center;
@@ -1462,7 +1434,7 @@ body.vscode-dark {
 }
 
 .xr-section-summary-in:checked + label:before {
-  content: '▼';
+  content: "▼";
 }
 
 .xr-section-summary-in:checked + label > span {
@@ -1534,15 +1506,15 @@ body.vscode-dark {
 }
 
 .xr-dim-list:before {
-  content: '(';
+  content: "(";
 }
 
 .xr-dim-list:after {
-  content: ')';
+  content: ")";
 }
 
 .xr-dim-list li:not(:last-child):after {
-  content: ',';
+  content: ",";
   padding-right: 5px;
 }
 
@@ -1590,6 +1562,11 @@ body.vscode-dark {
   grid-column: 4;
 }
 
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -1611,14 +1588,16 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
   display: block;
 }
 
@@ -1628,13 +1607,16 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
+.xr-index-name div,
+.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   grid-column: 1 / -1;
 }
 
@@ -1672,7 +1654,8 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2 {
+.xr-icon-file-text2,
+.xr-no-icon {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -1681,21 +1664,54 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
-Dimensions:  (X: 720, T: 324, Y: 360)
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 336MB
+Dimensions:  (T: 324, Y: 360, X: 720)
 Coordinates:
-  * X        (X) float32 0.25 0.75 1.25 1.75 2.25 ... 358.2 358.8 359.2 359.8
-  * T        (T) float32 228.5 229.5 230.5 231.5 ... 548.5 549.5 550.5 551.5
-  * Y        (Y) float32 -89.75 -89.25 -88.75 -88.25 ... 88.25 88.75 89.25 89.75
+  * T        (T) float32 1kB 228.5 229.5 230.5 231.5 ... 548.5 549.5 550.5 551.5
+  * Y        (Y) float32 1kB -89.75 -89.25 -88.75 -88.25 ... 88.75 89.25 89.75
+  * X        (X) float32 3kB 0.25 0.75 1.25 1.75 ... 358.2 358.8 359.2 359.8
 Data variables:
-    rain     (T, Y, X) float32 ...
+    rain     (T, Y, X) float32 336MB ...
 Attributes:
-    Conventions:  IRIDL</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-5fdeea4e-f6b4-4460-8d69-d24da6acda76' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-5fdeea4e-f6b4-4460-8d69-d24da6acda76' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>X</span>: 720</li><li><span class='xr-has-index'>T</span>: 324</li><li><span class='xr-has-index'>Y</span>: 360</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-747acdd0-3f5a-4bd6-b7f0-b220b3360ef2' class='xr-section-summary-in' type='checkbox'  checked><label for='section-747acdd0-3f5a-4bd6-b7f0-b220b3360ef2' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>X</span></div><div class='xr-var-dims'>(X)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.25 0.75 1.25 ... 359.2 359.8</div><input id='attrs-4c529a24-20e2-47ae-b2c7-6afdcf4d3381' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4c529a24-20e2-47ae-b2c7-6afdcf4d3381' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8c6f059a-7e83-4e1d-9c1a-361b61b0ee29' class='xr-var-data-in' type='checkbox'><label for='data-8c6f059a-7e83-4e1d-9c1a-361b61b0ee29' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>pointwidth :</span></dt><dd>0.5</dd><dt><span>gridtype :</span></dt><dd>1</dd><dt><span>units :</span></dt><dd>degree_east</dd></dl></div><div class='xr-var-data'><pre>array([2.5000e-01, 7.5000e-01, 1.2500e+00, ..., 3.5875e+02, 3.5925e+02,
-       3.5975e+02], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>T</span></div><div class='xr-var-dims'>(T)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>228.5 229.5 230.5 ... 550.5 551.5</div><input id='attrs-8b14dd35-6cb0-4160-b9b1-f15ac81cd864' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8b14dd35-6cb0-4160-b9b1-f15ac81cd864' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6297818c-4cca-4f7f-97ee-611a249f9ed1' class='xr-var-data-in' type='checkbox'><label for='data-6297818c-4cca-4f7f-97ee-611a249f9ed1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>pointwidth :</span></dt><dd>1.0</dd><dt><span>calendar :</span></dt><dd>360</dd><dt><span>gridtype :</span></dt><dd>0</dd><dt><span>units :</span></dt><dd>months since 1960-01-01</dd></dl></div><div class='xr-var-data'><pre>array([228.5, 229.5, 230.5, ..., 549.5, 550.5, 551.5], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>Y</span></div><div class='xr-var-dims'>(Y)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-89.75 -89.25 ... 89.25 89.75</div><input id='attrs-663522fc-985d-4483-b1d3-87e8a91081b3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-663522fc-985d-4483-b1d3-87e8a91081b3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b8d58ad-4422-4424-8230-fbf244db082d' class='xr-var-data-in' type='checkbox'><label for='data-6b8d58ad-4422-4424-8230-fbf244db082d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>pointwidth :</span></dt><dd>0.5</dd><dt><span>gridtype :</span></dt><dd>0</dd><dt><span>units :</span></dt><dd>degree_north</dd></dl></div><div class='xr-var-data'><pre>array([-89.75, -89.25, -88.75, ...,  88.75,  89.25,  89.75], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d3b2b4cd-2917-4310-aeb5-a157e4f9f8cb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d3b2b4cd-2917-4310-aeb5-a157e4f9f8cb' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>rain</span></div><div class='xr-var-dims'>(T, Y, X)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9b7cefb8-eb36-4544-ae3e-e9f85ad731bd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9b7cefb8-eb36-4544-ae3e-e9f85ad731bd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-292604fe-9393-4b72-9351-4b1b3d2ffa95' class='xr-var-data-in' type='checkbox'><label for='data-292604fe-9393-4b72-9351-4b1b3d2ffa95' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>pointwidth :</span></dt><dd>0</dd><dt><span>standard_name :</span></dt><dd>lwe_precipitation_rate</dd><dt><span>file_missing_value :</span></dt><dd>-999.0</dd><dt><span>history :</span></dt><dd>Boxes with less than 0.0% dropped</dd><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>long_name :</span></dt><dd>Monthly Precipitation</dd></dl></div><div class='xr-var-data'><pre>[83980800 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7192f24c-5ed5-4d4e-93f8-0d7a5d98318f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-7192f24c-5ed5-4d4e-93f8-0d7a5d98318f' class='xr-section-summary' >Attributes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>IRIDL</dd></dl></div></li></ul></div></div></div></div>
+    Conventions:  IRIDL</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-eff8fad9-9cd4-4deb-bca6-e48bd0f4143e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-eff8fad9-9cd4-4deb-bca6-e48bd0f4143e' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>T</span>: 324</li><li><span class='xr-has-index'>Y</span>: 360</li><li><span class='xr-has-index'>X</span>: 720</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-d3334733-89a6-4252-8b0b-34236fb04df7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d3334733-89a6-4252-8b0b-34236fb04df7' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>T</span></div><div class='xr-var-dims'>(T)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>228.5 229.5 230.5 ... 550.5 551.5</div><input id='attrs-b604af1d-df0a-4582-b17e-28843052fb8d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b604af1d-df0a-4582-b17e-28843052fb8d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f02a8f8f-e925-4cf4-8b2f-908017ddf952' class='xr-var-data-in' type='checkbox'><label for='data-f02a8f8f-e925-4cf4-8b2f-908017ddf952' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>pointwidth :</span></dt><dd>1.0</dd><dt><span>calendar :</span></dt><dd>360</dd><dt><span>gridtype :</span></dt><dd>0</dd><dt><span>units :</span></dt><dd>months since 1960-01-01</dd></dl></div><div class='xr-var-data'><pre>array([228.5, 229.5, 230.5, ..., 549.5, 550.5, 551.5],
+      shape=(324,), dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>Y</span></div><div class='xr-var-dims'>(Y)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-89.75 -89.25 ... 89.25 89.75</div><input id='attrs-57c07fcc-2e90-4340-8bf6-0954259a4b99' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-57c07fcc-2e90-4340-8bf6-0954259a4b99' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e7ec15db-38ee-4760-8767-64e4ac036149' class='xr-var-data-in' type='checkbox'><label for='data-e7ec15db-38ee-4760-8767-64e4ac036149' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>pointwidth :</span></dt><dd>0.5</dd><dt><span>gridtype :</span></dt><dd>0</dd><dt><span>units :</span></dt><dd>degree_north</dd></dl></div><div class='xr-var-data'><pre>array([-89.75, -89.25, -88.75, ...,  88.75,  89.25,  89.75],
+      shape=(360,), dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>X</span></div><div class='xr-var-dims'>(X)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.25 0.75 1.25 ... 359.2 359.8</div><input id='attrs-cea3b6a9-efb5-4dc3-9cfa-f97574cccd88' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cea3b6a9-efb5-4dc3-9cfa-f97574cccd88' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1f96514d-08f1-4d77-b869-80f35f8cafd9' class='xr-var-data-in' type='checkbox'><label for='data-1f96514d-08f1-4d77-b869-80f35f8cafd9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>pointwidth :</span></dt><dd>0.5</dd><dt><span>gridtype :</span></dt><dd>1</dd><dt><span>units :</span></dt><dd>degree_east</dd></dl></div><div class='xr-var-data'><pre>array([2.5000e-01, 7.5000e-01, 1.2500e+00, ..., 3.5875e+02, 3.5925e+02,
+       3.5975e+02], shape=(720,), dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a9a79829-b142-4dff-8712-6c992efab5ad' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a9a79829-b142-4dff-8712-6c992efab5ad' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>rain</span></div><div class='xr-var-dims'>(T, Y, X)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2d6170ec-861d-426e-9518-919d4a6cd041' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2d6170ec-861d-426e-9518-919d4a6cd041' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7dc2c159-114d-4d8d-892d-f489ef064f68' class='xr-var-data-in' type='checkbox'><label for='data-7dc2c159-114d-4d8d-892d-f489ef064f68' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>pointwidth :</span></dt><dd>0</dd><dt><span>standard_name :</span></dt><dd>lwe_precipitation_rate</dd><dt><span>file_missing_value :</span></dt><dd>-999.0</dd><dt><span>units :</span></dt><dd>mm/day</dd><dt><span>history :</span></dt><dd>Boxes with less than 0.0% dropped</dd><dt><span>long_name :</span></dt><dd>Monthly Precipitation</dd></dl></div><div class='xr-var-data'><pre>[83980800 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-78e52d1a-3dc0-43e5-bb6e-cb328f353566' class='xr-section-summary-in' type='checkbox'  ><label for='section-78e52d1a-3dc0-43e5-bb6e-cb328f353566' class='xr-section-summary' >Indexes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>T</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-686e3508-8c4a-4eb6-857b-620d25109c9e' class='xr-index-data-in' type='checkbox'/><label for='index-686e3508-8c4a-4eb6-857b-620d25109c9e' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([228.5, 229.5, 230.5, 231.5, 232.5, 233.5, 234.5, 235.5, 236.5, 237.5,
+       ...
+       542.5, 543.5, 544.5, 545.5, 546.5, 547.5, 548.5, 549.5, 550.5, 551.5],
+      dtype=&#x27;float32&#x27;, name=&#x27;T&#x27;, length=324))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>Y</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-94b2859b-1933-4fc4-96b9-26a76dda7864' class='xr-index-data-in' type='checkbox'/><label for='index-94b2859b-1933-4fc4-96b9-26a76dda7864' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-89.75, -89.25, -88.75, -88.25, -87.75, -87.25, -86.75, -86.25, -85.75,
+       -85.25,
+       ...
+        85.25,  85.75,  86.25,  86.75,  87.25,  87.75,  88.25,  88.75,  89.25,
+        89.75],
+      dtype=&#x27;float32&#x27;, name=&#x27;Y&#x27;, length=360))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>X</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-79481fa0-5afe-48dc-a8eb-349843cf8c2f' class='xr-index-data-in' type='checkbox'/><label for='index-79481fa0-5afe-48dc-a8eb-349843cf8c2f' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([  0.25,   0.75,   1.25,   1.75,   2.25,   2.75,   3.25,   3.75,   4.25,
+         4.75,
+       ...
+       355.25, 355.75, 356.25, 356.75, 357.25, 357.75, 358.25, 358.75, 359.25,
+       359.75],
+      dtype=&#x27;float32&#x27;, name=&#x27;X&#x27;, length=720))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c1d202dc-b613-4f90-aee5-2a1091fd8ca1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c1d202dc-b613-4f90-aee5-2a1091fd8ca1' class='xr-section-summary' >Attributes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>IRIDL</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;rain&#39;</span><span class="p">][</span><span class="mi">12</span><span class="p">,:,:]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x145da082c910&gt;
+</pre></div>
+</div>
+<img alt="../../_images/data_23_1.png" src="../../_images/data_23_1.png" />
+</div>
 </div>
 </section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="extra-information">
+<h1>~~~~~~~~~~~~EXTRA Information~~~~~~~~~~~~~~~~<a class="headerlink" href="#extra-information" title="Permalink to this headline">#</a></h1>
 <section id="filesystem-spec-fsspec">
-<h4>Filesystem-Spec (fsspec)<a class="headerlink" href="#filesystem-spec-fsspec" title="Permalink to this headline">#</a></h4>
+<h2>Filesystem-Spec (fsspec)<a class="headerlink" href="#filesystem-spec-fsspec" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Filesystem Spec (<a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a>) is a project to provide a unified pythonic interface to local, remote and embedded file systems and bytes storage.</p>
 </div></blockquote>
@@ -1710,15 +1726,8 @@ These include</p>
 </ul>
 <p>and <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/api.html#other-known-implementations">several others</a>.</p>
 </section>
-</section>
-<section id="cloud-object-storage">
-<h3>Cloud Object Storage<a class="headerlink" href="#cloud-object-storage" title="Permalink to this headline">#</a></h3>
-<p>Cloud object storage is the easiest and most performant way to share data over the internet.
-Data stored in cloud object storage is always available and can be read extremely quickly, particularly from the same cloud region.</p>
-<p>More TODO here…</p>
-</section>
 <section id="local-files">
-<h3>Local Files<a class="headerlink" href="#local-files" title="Permalink to this headline">#</a></h3>
+<h2>Local Files<a class="headerlink" href="#local-files" title="Permalink to this headline">#</a></h2>
 <p>Some programs require data to be on your local hard drive to read.</p>
 <p>To download files to your local computer, we strongly recommend <a class="reference external" href="https://www.fatiando.org/pooch/latest/">Pooch</a>.</p>
 <p>Here is an example of using Pooch to download data from the <a class="reference external" href="https://data.cresis.ku.edu/">CRESIS Radar Database</a>.
@@ -1740,7 +1749,7 @@ As with the examples above, the first step is to nagivate to web page and try to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/2017_Antarctica_P3/CSARP_mvdr/Data_img_02_20171124_03_020.mat&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/global/home/users/hgamarro/.cache/2017_Antarctica_P3/CSARP_mvdr/Data_img_02_20171124_03_020.mat&#39;
 </pre></div>
 </div>
 </div>
@@ -1792,7 +1801,7 @@ As with the examples above, the first step is to nagivate to web page and try to
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/greenland_ice_sheet/vel_2010-07-01_2011-06-31.nc&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/global/home/users/hgamarro/.cache/greenland_ice_sheet/vel_2010-07-01_2011-06-31.nc&#39;
 </pre></div>
 </div>
 </div>
@@ -1836,12 +1845,14 @@ As with the examples above, the first step is to nagivate to web page and try to
   --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
 }
 
-html[theme=dark],
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
   --xr-font-color3: rgba(255, 255, 255, 0.38);
-  --xr-border-color: #1F1F1F;
+  --xr-border-color: #1f1f1f;
   --xr-disabled-color: #515151;
   --xr-background-color: #111111;
   --xr-background-color-row-even: #111111;
@@ -1849,7 +1860,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1886,7 +1897,7 @@ body.vscode-dark {
 .xr-sections {
   padding-left: 0 !important;
   display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
 }
 
 .xr-section-item {
@@ -1894,7 +1905,9 @@ body.vscode-dark {
 }
 
 .xr-section-item input {
-  display: none;
+  display: inline-block;
+  opacity: 0;
+  height: 0;
 }
 
 .xr-section-item input + label {
@@ -1904,6 +1917,10 @@ body.vscode-dark {
 .xr-section-item input:enabled + label {
   cursor: pointer;
   color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
 }
 
 .xr-section-item input:enabled + label:hover {
@@ -1927,7 +1944,7 @@ body.vscode-dark {
 
 .xr-section-summary-in + label:before {
   display: inline-block;
-  content: '►';
+  content: "►";
   font-size: 11px;
   width: 15px;
   text-align: center;
@@ -1938,7 +1955,7 @@ body.vscode-dark {
 }
 
 .xr-section-summary-in:checked + label:before {
-  content: '▼';
+  content: "▼";
 }
 
 .xr-section-summary-in:checked + label > span {
@@ -2010,15 +2027,15 @@ body.vscode-dark {
 }
 
 .xr-dim-list:before {
-  content: '(';
+  content: "(";
 }
 
 .xr-dim-list:after {
-  content: ')';
+  content: ")";
 }
 
 .xr-dim-list li:not(:last-child):after {
-  content: ',';
+  content: ",";
   padding-right: 5px;
 }
 
@@ -2066,6 +2083,11 @@ body.vscode-dark {
   grid-column: 4;
 }
 
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -2087,14 +2109,16 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
   display: block;
 }
 
@@ -2104,13 +2128,16 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
+.xr-index-name div,
+.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   grid-column: 1 / -1;
 }
 
@@ -2148,7 +2175,8 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2 {
+.xr-icon-file-text2,
+.xr-no-icon {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -2157,15 +2185,15 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 1GB
 Dimensions:       (x: 10018, y: 17946)
 Coordinates:
-  * x             (x) float64 -6.38e+05 -6.378e+05 ... 8.644e+05 8.646e+05
-  * y             (y) float64 -6.576e+05 -6.578e+05 ... -3.349e+06 -3.349e+06
+  * x             (x) float64 80kB -6.38e+05 -6.378e+05 ... 8.644e+05 8.646e+05
+  * y             (y) float64 144kB -6.576e+05 -6.578e+05 ... -3.349e+06
 Data variables:
-    coord_system  |S1 b&#x27;&#x27;
-    VX            (y, x) float32 ...
-    VY            (y, x) float32 ...
+    coord_system  |S1 1B ...
+    VX            (y, x) float32 719MB ...
+    VY            (y, x) float32 719MB ...
 Attributes: (12/27)
     Conventions:               CF-1.6
     Metadata_Conventions:      CF-1.6, Unidata Dataset Discovery v1.0, GDS v2.0
@@ -2179,9 +2207,20 @@ Attributes: (12/27)
     project:                   NASA/MEaSUREs_UC-Irvine
     creator_name:              J. Mouginot
     comment:                    
-    license:                   No restrictions on access or use</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-1159c5ec-c009-4575-851c-8c1b1800d2f8' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-1159c5ec-c009-4575-851c-8c1b1800d2f8' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>x</span>: 10018</li><li><span class='xr-has-index'>y</span>: 17946</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-75ddde74-b038-453c-ad78-669a6ec92871' class='xr-section-summary-in' type='checkbox'  checked><label for='section-75ddde74-b038-453c-ad78-669a6ec92871' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-6.38e+05 -6.378e+05 ... 8.646e+05</div><input id='attrs-5eb99ea4-b274-4f0b-8f16-e9bf9e5342d3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5eb99ea4-b274-4f0b-8f16-e9bf9e5342d3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9790caa0-3a15-478c-9126-30d93260aaeb' class='xr-var-data-in' type='checkbox'><label for='data-9790caa0-3a15-478c-9126-30d93260aaeb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Cartesian x-coordinate</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-638000., -637850., -637700., ...,  864250.,  864400.,  864550.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-6.576e+05 ... -3.349e+06</div><input id='attrs-2198e59c-bab1-4b76-98c3-8327b179bf35' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2198e59c-bab1-4b76-98c3-8327b179bf35' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-08e3b6c0-62c8-45bb-9417-6285a40ccc07' class='xr-var-data-in' type='checkbox'><label for='data-08e3b6c0-62c8-45bb-9417-6285a40ccc07' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Cartesian y-coordinate</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([ -657600.,  -657750.,  -657900., ..., -3349050., -3349200., -3349350.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d67cc7bf-8caa-4340-acb9-82036ed7c4b7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d67cc7bf-8caa-4340-acb9-82036ed7c4b7' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>coord_system</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>|S1</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7dc19cf4-f815-4ec3-acf5-fd5ce3d79b1a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7dc19cf4-f815-4ec3-acf5-fd5ce3d79b1a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bf79b69f-2a63-4cb1-ad31-d19927a12ef8' class='xr-var-data-in' type='checkbox'><label for='data-bf79b69f-2a63-4cb1-ad31-d19927a12ef8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>ellipsoid :</span></dt><dd>WGS84</dd><dt><span>false_easting :</span></dt><dd>0.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>grid_mapping_name :</span></dt><dd>polar_stereographic</dd><dt><span>longitude_of_projection_origin :</span></dt><dd>45.0</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>90.0</dd><dt><span>standard_parallel :</span></dt><dd>70.0</dd><dt><span>straight_vertical_longitude_from_pole :</span></dt><dd>0.0</dd></dl></div><div class='xr-var-data'><pre>array(b&#x27;&#x27;, dtype=&#x27;|S1&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VX</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-cd79798f-6918-4e40-bbb4-8397d9efa9f8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cd79798f-6918-4e40-bbb4-8397d9efa9f8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9631b42e-f14a-4d89-955e-95f106616bdf' class='xr-var-data-in' type='checkbox'><label for='data-9631b42e-f14a-4d89-955e-95f106616bdf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ice velocity in x direction</dd><dt><span>standard_name :</span></dt><dd>land_ice_x_velocity</dd><dt><span>units :</span></dt><dd>meter/year</dd><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>grid_mapping :</span></dt><dd>coord_system</dd></dl></div><div class='xr-var-data'><pre>[179783028 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VY</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-541cad93-c964-41c9-a21a-b893a1de4f50' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-541cad93-c964-41c9-a21a-b893a1de4f50' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9056733e-efea-472b-aa26-169e3fbc04d3' class='xr-var-data-in' type='checkbox'><label for='data-9056733e-efea-472b-aa26-169e3fbc04d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ice velocity in y direction</dd><dt><span>standard_name :</span></dt><dd>land_ice_y_velocity</dd><dt><span>units :</span></dt><dd>meter/year</dd><dt><span>coordinates :</span></dt><dd>lon lat</dd><dt><span>grid_mapping :</span></dt><dd>coord_system</dd></dl></div><div class='xr-var-data'><pre>[179783028 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e2620a59-ca15-45c4-a61c-c8c433638497' class='xr-section-summary-in' type='checkbox'  ><label for='section-e2620a59-ca15-45c4-a61c-c8c433638497' class='xr-section-summary' >Attributes: <span>(27)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>Metadata_Conventions :</span></dt><dd>CF-1.6, Unidata Dataset Discovery v1.0, GDS v2.0</dd><dt><span>standard_name_vocabulary :</span></dt><dd>CF Standard Name Table (v22, 12 February 2013)</dd><dt><span>id :</span></dt><dd>vel_final.t.nc</dd><dt><span>title :</span></dt><dd>MEaSURES Antarctica Ice Velocity Map 450m spacing</dd><dt><span>product_version :</span></dt><dd> </dd><dt><span>summary :</span></dt><dd> </dd><dt><span>keywords :</span></dt><dd> </dd><dt><span>keywords_vocabulary :</span></dt><dd> </dd><dt><span>platform :</span></dt><dd> </dd><dt><span>sensor :</span></dt><dd> </dd><dt><span>date_created :</span></dt><dd>2017-06-14T23:00:25.00003874301591Z</dd><dt><span>institution :</span></dt><dd>Department of Earth System Science, University of California, Irvine</dd><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_lat_min :</span></dt><dd>60</dd><dt><span>geospatial_lat_max :</span></dt><dd>90</dd><dt><span>geospatial_lon_min :</span></dt><dd>-180</dd><dt><span>geospatial_lon_max :</span></dt><dd>180</dd><dt><span>spatial_resolution :</span></dt><dd>150 m</dd><dt><span>time_coverage_start :</span></dt><dd>1995-01-01</dd><dt><span>time_coverage_end :</span></dt><dd>2016-12-31</dd><dt><span>project :</span></dt><dd>NASA/MEaSUREs_UC-Irvine</dd><dt><span>creator_name :</span></dt><dd>J. Mouginot</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>license :</span></dt><dd>No restrictions on access or use</dd></dl></div></li></ul></div></div></div></div>
+    license:                   No restrictions on access or use</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-2f2093bb-7925-4942-8587-9b589ea4ec90' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2f2093bb-7925-4942-8587-9b589ea4ec90' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>x</span>: 10018</li><li><span class='xr-has-index'>y</span>: 17946</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-d09061f4-6408-40d2-944f-04c965c6e7c3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d09061f4-6408-40d2-944f-04c965c6e7c3' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-6.38e+05 -6.378e+05 ... 8.646e+05</div><input id='attrs-b1e40a90-6cd3-4c37-8571-5c8376c39971' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b1e40a90-6cd3-4c37-8571-5c8376c39971' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-920c5fba-2808-424c-94fc-511a5d676b06' class='xr-var-data-in' type='checkbox'><label for='data-920c5fba-2808-424c-94fc-511a5d676b06' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Cartesian x-coordinate</dd><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-638000., -637850., -637700., ...,  864250.,  864400.,  864550.],
+      shape=(10018,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-6.576e+05 ... -3.349e+06</div><input id='attrs-3689337b-db55-4699-a0f5-b30edf02560d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3689337b-db55-4699-a0f5-b30edf02560d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0c61395d-4371-471e-884b-0c8924d5398b' class='xr-var-data-in' type='checkbox'><label for='data-0c61395d-4371-471e-884b-0c8924d5398b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Cartesian y-coordinate</dd><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([ -657600.,  -657750.,  -657900., ..., -3349050., -3349200., -3349350.],
+      shape=(17946,))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-aad00c0c-90f7-423b-bb5c-6d5426103647' class='xr-section-summary-in' type='checkbox'  checked><label for='section-aad00c0c-90f7-423b-bb5c-6d5426103647' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>coord_system</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>|S1</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1e5f4090-c741-46b1-a78b-7d66b5e749b4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1e5f4090-c741-46b1-a78b-7d66b5e749b4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-309c350c-2c15-4c90-87b1-8f1eae12f4a9' class='xr-var-data-in' type='checkbox'><label for='data-309c350c-2c15-4c90-87b1-8f1eae12f4a9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>ellipsoid :</span></dt><dd>WGS84</dd><dt><span>false_easting :</span></dt><dd>0.0</dd><dt><span>false_northing :</span></dt><dd>0.0</dd><dt><span>grid_mapping_name :</span></dt><dd>polar_stereographic</dd><dt><span>longitude_of_projection_origin :</span></dt><dd>45.0</dd><dt><span>latitude_of_projection_origin :</span></dt><dd>90.0</dd><dt><span>standard_parallel :</span></dt><dd>70.0</dd><dt><span>straight_vertical_longitude_from_pole :</span></dt><dd>0.0</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=|S1]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VX</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-70b948c9-f74e-49f2-9bcd-1079565fdc2e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-70b948c9-f74e-49f2-9bcd-1079565fdc2e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4f1599d9-db7f-459a-856b-77a8ba13edb5' class='xr-var-data-in' type='checkbox'><label for='data-4f1599d9-db7f-459a-856b-77a8ba13edb5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ice velocity in x direction</dd><dt><span>standard_name :</span></dt><dd>land_ice_x_velocity</dd><dt><span>units :</span></dt><dd>meter/year</dd><dt><span>grid_mapping :</span></dt><dd>coord_system</dd></dl></div><div class='xr-var-data'><pre>[179783028 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VY</span></div><div class='xr-var-dims'>(y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ca597c33-8ede-4dc4-83da-c519ac7a8fd3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ca597c33-8ede-4dc4-83da-c519ac7a8fd3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e29823de-df81-4df8-8392-382434adb5bb' class='xr-var-data-in' type='checkbox'><label for='data-e29823de-df81-4df8-8392-382434adb5bb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ice velocity in y direction</dd><dt><span>standard_name :</span></dt><dd>land_ice_y_velocity</dd><dt><span>units :</span></dt><dd>meter/year</dd><dt><span>grid_mapping :</span></dt><dd>coord_system</dd></dl></div><div class='xr-var-data'><pre>[179783028 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b1e60be2-b8aa-4025-95b9-4501ab0ee868' class='xr-section-summary-in' type='checkbox'  ><label for='section-b1e60be2-b8aa-4025-95b9-4501ab0ee868' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-40b0c293-aad0-4912-9af2-f9b4f23dfcc0' class='xr-index-data-in' type='checkbox'/><label for='index-40b0c293-aad0-4912-9af2-f9b4f23dfcc0' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-638000.0, -637850.0, -637700.0, -637550.0, -637400.0, -637250.0,
+       -637100.0, -636950.0, -636800.0, -636650.0,
+       ...
+        863200.0,  863350.0,  863500.0,  863650.0,  863800.0,  863950.0,
+        864100.0,  864250.0,  864400.0,  864550.0],
+      dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=10018))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-7d025c7e-6053-4792-acd2-bec97e781bae' class='xr-index-data-in' type='checkbox'/><label for='index-7d025c7e-6053-4792-acd2-bec97e781bae' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ -657600.0,  -657750.0,  -657900.0,  -658050.0,  -658200.0,  -658350.0,
+        -658500.0,  -658650.0,  -658800.0,  -658950.0,
+       ...
+       -3348000.0, -3348150.0, -3348300.0, -3348450.0, -3348600.0, -3348750.0,
+       -3348900.0, -3349050.0, -3349200.0, -3349350.0],
+      dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=17946))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-662422ff-381a-4441-81be-76e933c6ffd2' class='xr-section-summary-in' type='checkbox'  ><label for='section-662422ff-381a-4441-81be-76e933c6ffd2' class='xr-section-summary' >Attributes: <span>(27)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>Metadata_Conventions :</span></dt><dd>CF-1.6, Unidata Dataset Discovery v1.0, GDS v2.0</dd><dt><span>standard_name_vocabulary :</span></dt><dd>CF Standard Name Table (v22, 12 February 2013)</dd><dt><span>id :</span></dt><dd>vel_final.t.nc</dd><dt><span>title :</span></dt><dd>MEaSURES Antarctica Ice Velocity Map 450m spacing</dd><dt><span>product_version :</span></dt><dd> </dd><dt><span>summary :</span></dt><dd> </dd><dt><span>keywords :</span></dt><dd> </dd><dt><span>keywords_vocabulary :</span></dt><dd> </dd><dt><span>platform :</span></dt><dd> </dd><dt><span>sensor :</span></dt><dd> </dd><dt><span>date_created :</span></dt><dd>2017-06-14T23:00:25.00003874301591Z</dd><dt><span>institution :</span></dt><dd>Department of Earth System Science, University of California, Irvine</dd><dt><span>cdm_data_type :</span></dt><dd>Grid</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_lat_min :</span></dt><dd>60</dd><dt><span>geospatial_lat_max :</span></dt><dd>90</dd><dt><span>geospatial_lon_min :</span></dt><dd>-180</dd><dt><span>geospatial_lon_max :</span></dt><dd>180</dd><dt><span>spatial_resolution :</span></dt><dd>150 m</dd><dt><span>time_coverage_start :</span></dt><dd>1995-01-01</dd><dt><span>time_coverage_end :</span></dt><dd>2016-12-31</dd><dt><span>project :</span></dt><dd>NASA/MEaSUREs_UC-Irvine</dd><dt><span>creator_name :</span></dt><dd>J. Mouginot</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>license :</span></dt><dd>No restrictions on access or use</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</section>
 </section>
 <section id="best-practices-for-data-sharing-fair">
 <h2>Best practices for data sharing: FAIR<a class="headerlink" href="#best-practices-for-data-sharing-fair" title="Permalink to this headline">#</a></h2>
@@ -2314,7 +2353,10 @@ This will create a permanent archive for your data and generate a new DOI! 🎉<
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/.cache/pooch/fc13d29563dcf659960ec752e43618fa-wind_po_hrly.csv&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data from &#39;doi:10.5281/zenodo.5739406/wind_po_hrly.csv&#39; to file &#39;/global/home/users/hgamarro/.cache/pooch/fc13d29563dcf659960ec752e43618fa-wind_po_hrly.csv&#39;.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/global/home/users/hgamarro/.cache/pooch/fc13d29563dcf659960ec752e43618fa-wind_po_hrly.csv&#39;
 </pre></div>
 </div>
 </div>
@@ -2447,16 +2489,16 @@ Fortunately, Zenodo and GitHub integrate very well with each other.</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "learning"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "learning",
             path: "./lectures/environment"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'learning'</script>
 
               </div>
               
