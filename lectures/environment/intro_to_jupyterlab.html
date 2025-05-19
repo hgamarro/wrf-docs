@@ -10,8 +10,8 @@
 <meta property="og:url" content="https://hgamarro.github.io/wrf-docs/lectures/environment/intro_to_jupyterlab.html" />
 <meta property="og:site_name" content="Python" />
 <meta property="og:description" content="JupyterLab will be our primary method for interacting with the computer. JupyterLab contains a complete environment for interactive scientific computing which runs in your web browser. Jupyter is a..." />
-<meta property="og:image" content="https://earth-env-data-science.github.io/_static/eeds-logo.png" />
-<meta property="og:image:alt" content="Python" />
+<meta property="og:image" content="https://hgamarro.github.io/wrf-docs/_images/a1.png" />
+<meta property="og:image:alt" content="OOD Interactive Apps" />
 <meta name="description" content="JupyterLab will be our primary method for interacting with the computer. JupyterLab contains a complete environment for interactive scientific computing which runs in your web browser. Jupyter is a..." />
 
     <title>Intro to JupyterLab &#8212; Weather Data Science</title>
@@ -288,6 +288,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../basic_scipy/mapping_cartopy.html">
+   Maps in Scientific Python
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../assignments/cartopy.html">
    Assignment: Making Maps with Cartopy
   </a>
@@ -519,6 +524,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-jupyter-notebooks-via-the-interactive-open-ondemand-service">
+   Using Jupyter notebooks via the interactive Open OnDemand service
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-a-notebook-via-open-ondemand">
+     Running a notebook via Open OnDemand
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#markdown">
    Markdown
   </a>
@@ -543,6 +560,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-jupyter-notebooks-via-the-interactive-open-ondemand-service">
+   Using Jupyter notebooks via the interactive Open OnDemand service
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-a-notebook-via-open-ondemand">
+     Running a notebook via Open OnDemand
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#markdown">
    Markdown
   </a>
@@ -564,6 +593,42 @@ interacting with the computer. JupyterLab contains a complete environment for
 interactive scientific computing which runs in your web browser. Jupyter is an
 open source python project that was started by scientists like yourselves who
 wanted a more effective way to interact with their computers.</p>
+<section id="using-jupyter-notebooks-via-the-interactive-open-ondemand-service">
+<h2>Using Jupyter notebooks via the interactive Open OnDemand service<a class="headerlink" href="#using-jupyter-notebooks-via-the-interactive-open-ondemand-service" title="Permalink to this headline">#</a></h2>
+<section id="running-a-notebook-via-open-ondemand">
+<h3>Running a notebook via Open OnDemand<a class="headerlink" href="#running-a-notebook-via-open-ondemand" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Connect to <a class="reference external" href="https://ood.brc.berkeley.edu">https://ood.brc.berkeley.edu</a></p></li>
+<li><p>Just after logging in with your BRC username and one-time password (OTP), the initial OnDemand screen presents a welcome screen. Click the “Interactive Apps” pulldown.
+<img alt="OOD Interactive Apps" src="../../_images/a1.png" /></p></li>
+<li><p><strong>Which Jupyter server should I pick?</strong></p>
+<ul class="simple">
+<li><p><strong>Heavy or long-running jobs:</strong><br />
+Choose <strong>“Jupyter Server – compute via Slurm using Savio partitions”</strong>. This reserves a dedicated compute node for resource-intensive analyses.</p></li>
+<li><p><strong>Quick tests or light work:</strong><br />
+Choose <strong>“Jupyter Server – exploration, debugging on (free) shared nodes”</strong>. This runs on a shared server (up to 8 GB RAM and a few CPU cores) and doesn’t count against your allocation.<br />
+<img alt="OOD Interactive Apps" src="../../_images/a2.png" /></p></li>
+</ul>
+</li>
+<li><p><strong>Start your Jupyter session</strong></p>
+<ol class="simple">
+<li><p>Keep default job name: <code class="docutils literal notranslate"><span class="pre">OOD_Jupyter</span></code></p></li>
+<li><p>Leave <strong>Software modules</strong> blank (Anaconda is loaded automatically)</p></li>
+<li><p>Select <strong>SLURM Partition</strong>: <code class="docutils literal notranslate"><span class="pre">savio3</span></code></p></li>
+<li><p>Select <strong>SLURM Account/Project Name</strong>: <code class="docutils literal notranslate"><span class="pre">co_aiolos</span></code></p></li>
+<li><p>Select <strong>SLURM QoS Name</strong>: <code class="docutils literal notranslate"><span class="pre">aiolos_savio3_normal</span></code></p></li>
+<li><p>Set <strong>Number of Compute Nodes</strong> to <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p>Set <strong>Wall Clock Time (hours)</strong> to <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
+<li><p>Click <strong>Launch</strong></p></li>
+<li><p>When your server is ready, click <strong>Launch</strong><br />
+<img alt="OOD Interactive Apps" src="../../_images/a3.png" /></p></li>
+</ol>
+</li>
+<li><p><strong>Connect to your notebook</strong><br />
+Once your session status turns <strong>Running</strong>, click the <strong>Connect to Jupyter</strong> button. This will open your Jupyter environment in a new browser tab.<br />
+<img alt="OOD Interactive Apps" src="../../_images/ood_jupyter_submit.png" />
+<img alt="OOD Interactive Apps" src="../../_images/ood_jupyter_connect.png" /></p></li>
+</ol>
 <p>JupyterLab has excellent documentation. Rather than repeat that documentation
 here, we point you to their docs. The following pages are particularly relevant:</p>
 <ul class="simple">
@@ -576,6 +641,8 @@ here, we point you to their docs. The following pages are particularly relevant:
 </ul>
 <p>You will gain experience and familiarity with JupyterLab over the course of the
 summer.</p>
+</section>
+</section>
 <section id="markdown">
 <h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h2>
 <p>Throughout the course, we will write rich text documents using Markdown.
@@ -585,6 +652,18 @@ Here are some useful references on Markdown syntax.</p>
 <li><p><a class="reference external" href="https://www.markdownguide.org/basic-syntax">Markdown Guide / Basic Syntax</a> -
 A more user-friendly syntax guide.</p></li>
 </ul>
+<!-- - change figs to current version of OOD since these are old.
+- Use the free for the to start
+- then add a point about compute 
+- easy way to screenshot 
+- add instuction to get to scratch 
+- install custom env 
+- show pic of actual env 
+- install the notebooks 
+- install the opackjage to let them view the lessons 
+- go over lesson 
+- add WRF stuff 
+-->
 <!-- ## Our Course JupyterHub
 
 [JupyterHub](https://jupyter.org/hub) is multi-user Jupyter environment designed for companies, classrooms and research labs.
