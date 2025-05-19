@@ -54,10 +54,10 @@ parts:
 - caption: Climate Model Data
   chapters:
   - file: lectures/models/intro_models
-  - file: lectures/models/cmip
-  - file: assignments/cmip
-  - file: lectures/models/regridding
-  - file: lectures/models/xgcm
+  # - file: lectures/models/cmip
+  # - file: assignments/cmip
+  # - file: lectures/models/regridding
+  # - file: lectures/models/xgcm
 
 # - caption: Big Data
 #   chapters:
