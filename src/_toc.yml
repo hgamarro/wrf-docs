@@ -41,10 +41,10 @@ parts:
   - file: lectures/xarray/xarray_intro
     sections:
     - file: lectures/xarray/xarray
-    - file: assignments/basic_xarray
-    - file: lectures/xarray/xarray-part2
-    - file: assignments/more_xarray
-    - file: lectures/xarray/xarray_tips_and_tricks
+    # - file: assignments/basic_xarray
+    - file: lectures/xarray/part2_xarray
+    # - file: assignments/more_xarray
+    # - file: lectures/xarray/xarray_tips_and_tricks
 
 - caption: Geoscience Package
   chapters:
