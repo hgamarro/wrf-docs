@@ -1,4 +1,4 @@
-## Environment Setup
+# Environment Setup
 
 Follow these steps to download the lesson files, install dependencies, and launch JupyterLab so you can browse the lessons.
 
@@ -48,11 +48,10 @@ This extension adds a **Table of Contents** panel for any folder of notebooks. O
 
 
 
-
-
-
-
-
+4. **Install required Python packages**  
+```bash
+conda install -c conda-forge pooch netcdf4 h5py curl libcurl openssl numpy matplotlib pandas xarray scipy cartopy -y
+```
 
 <!-- 3. **Install required Python packages**  
 ```bash
