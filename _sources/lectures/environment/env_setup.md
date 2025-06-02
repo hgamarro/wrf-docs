@@ -27,10 +27,11 @@ rm lessons/LICENSE.md lessons/eeds-logo.png
 ```
 
 3. **Install the JupyterLab notebook-viewer extension**  
-```bash
-jupyter labextension install jupyter-notebook-lab-extension
-```
-This extension adds a **Table of Contents** panel for any folder of notebooks. Once it’s installed:
+
+- This extension adds a **Table of Contents** panel for any folder of notebooks.
+- Click extension tab on the left toolbar of Jupyter lab (looks like a puzzle peice)
+- search for "jupyterlab-jupyterbook-navigation" and install 
+- Once it’s installed:
 
 1. In the **File Browser**, navigate into the `lessons/` folder.  
 2. Open the **Table of Contents** side-panel (click the “JB” icon in the left sidebar).  
@@ -48,7 +49,18 @@ This extension adds a **Table of Contents** panel for any folder of notebooks. O
 
 
 
-4. **Install required Python packages**  
+4. **Install required Python packages**
+- Create new Conda env based on savio instuctions
+- https://docs-research-it.berkeley.edu/services/high-performance-computing/user-guide/ood/jupyter/#using-a-conda-environment
+
+```bash
+module load anaconda3/2024.02-1-11.4
+conda create --name=learning ipykernel
+source activate learning
+python -m ipykernel install --user --name learning
+```
+- Once new conda env is installed, we can add new python packages that will be useful for the lessons
+
 ```bash
 conda install -c conda-forge pooch netcdf4 h5py curl libcurl openssl numpy matplotlib pandas xarray scipy cartopy -y
 ```

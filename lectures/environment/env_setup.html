@@ -242,8 +242,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../assignments/pandas_groupby.html">
-     Assignment: Pandas Groupby with Hurricane Data
+    <a class="reference internal" href="../../assignments/AQ_collab.html">
+     Assignment: Air Quality Time Series Plotting
     </a>
    </li>
   </ul>
@@ -283,8 +283,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../assignments/cartopy.html">
-   Assignment: Making Maps with Cartopy
+  <a class="reference internal" href="../../assignments/mapping_colab.html">
+   Assignment: Geospatial Mapping Assignment
   </a>
  </li>
 </ul>
@@ -531,10 +531,12 @@ rm<span class="w"> </span>lessons/LICENSE.md<span class="w"> </span>lessons/eeds
 <ol class="simple">
 <li><p><strong>Install the JupyterLab notebook-viewer extension</strong></p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>labextension<span class="w"> </span>install<span class="w"> </span>jupyter-notebook-lab-extension
-</pre></div>
-</div>
-<p>This extension adds a <strong>Table of Contents</strong> panel for any folder of notebooks. Once it’s installed:</p>
+<ul class="simple">
+<li><p>This extension adds a <strong>Table of Contents</strong> panel for any folder of notebooks.</p></li>
+<li><p>Click extension tab on the left toolbar of Jupyter lab (looks like a puzzle peice)</p></li>
+<li><p>search for “jupyterlab-jupyterbook-navigation” and install</p></li>
+<li><p>Once it’s installed:</p></li>
+</ul>
 <ol class="simple">
 <li><p>In the <strong>File Browser</strong>, navigate into the <code class="docutils literal notranslate"><span class="pre">lessons/</span></code> folder.</p></li>
 <li><p>Open the <strong>Table of Contents</strong> side-panel (click the “JB” icon in the left sidebar).</p></li>
@@ -555,6 +557,19 @@ rm<span class="w"> </span>lessons/LICENSE.md<span class="w"> </span>lessons/eeds
 <ol class="simple">
 <li><p><strong>Install required Python packages</strong></p></li>
 </ol>
+<ul class="simple">
+<li><p>Create new Conda env based on savio instuctions</p></li>
+<li><p><a class="reference external" href="https://docs-research-it.berkeley.edu/services/high-performance-computing/user-guide/ood/jupyter/#using-a-conda-environment">https://docs-research-it.berkeley.edu/services/high-performance-computing/user-guide/ood/jupyter/#using-a-conda-environment</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>anaconda3/2024.02-1-11.4
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="o">=</span>learning<span class="w"> </span>ipykernel
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>learning
+python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>learning
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Once new conda env is installed, we can add new python packages that will be useful for the lessons</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pooch<span class="w"> </span>netcdf4<span class="w"> </span>h5py<span class="w"> </span>curl<span class="w"> </span>libcurl<span class="w"> </span>openssl<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>pandas<span class="w"> </span>xarray<span class="w"> </span>scipy<span class="w"> </span>cartopy<span class="w"> </span>-y
 </pre></div>
 </div>
