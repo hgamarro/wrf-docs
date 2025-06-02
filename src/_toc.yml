@@ -37,7 +37,8 @@ parts:
     - file: lectures/pandas/basic_pandas
     - file: assignments/basic_pandas
     - file: lectures/pandas/pandas_groupby
-    - file: assignments/pandas_groupby
+    - file: assignments/AQ_collab
+    # - file: assignments/pandas_groupby
   - file: lectures/xarray/xarray_intro
     sections:
     - file: lectures/xarray/xarray
@@ -49,7 +50,7 @@ parts:
 - caption: Geoscience Package
   chapters:
   - file: lectures/basic_scipy/mapping_cartopy
-  - file: assignments/cartopy
+  - file: assignments/mapping_colab
 
 - caption: Climate Model Data
   chapters:
